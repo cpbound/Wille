@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center">
+<div class="col-5">
+  <h3> Executor 1</h3>
+  <%= simple_form_for(@executor) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :address %>
+    <%= f.input :phone %>
+    <%= f.submit "save" %>
+  <% end %>
+  </div>
+  <div class="col-5">
+  <h3> Executor 2</h3>
+  <%= simple_form_for(@executor) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :address %>
+    <%= f.input :phone %>
+    <%= f.submit "save" %>
+  <% end %>
+  </div>
+  </div>
+</div>
