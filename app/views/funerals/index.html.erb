@@ -1,0 +1,12 @@
+<% @funerals.each do |funeral| %>
+  <%= funeral.user.photo %>
+  <%= funeral.music %>
+  <%= funeral.no_invite %>
+  <%= funeral.sending_message %>
+  <%= funeral.arrangement %>
+  <%= funeral.representative %>
+  <%= funeral.ten_words %>
+  <%= funeral.memory %>
+  <%= funeral.unaware_state %>
+<% end %>
+<%= link_to "Want to know more?", articles_path %>
