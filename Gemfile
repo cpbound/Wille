@@ -36,6 +36,7 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 
 # ADDED FUN STUFFS
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'pundit'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -66,5 +67,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
