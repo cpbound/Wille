@@ -1,41 +1,45 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <span>10 words that describe your life so far</span>
-      <img src="..." class="d-block w-100" alt="...">
+<div class="container">
+  <%= simple_form_for @funeral do |f| %>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <span>10 words that describe your life so far</span>
+          <%= f.input :ten_words %>
+        </div>
+        <div class="carousel-item">
+          <span>What was your the best memory?</span>
+          <%= f.input :memory %>
+        </div>
+        <div class="carousel-item">
+          <span>Is there anyone you’d never like to call to a funeral?</span>
+          <%= f.input :no_invite %>
+        </div>
+        <div class="carousel-item">
+          <span>Is there anything you wanted to say but couldn’t?</span>
+          <%= f.input :sending_message %>
+        </div>
+        <div class="carousel-item">
+          <span>What do you want to do when you become a vegetable patient?</span>
+          <%= f.input :unaware_state %>
+        </div>
+        <div class="carousel-item">
+          <span> In the event that you became too sick to speak for yourself, who would you like to speak for you?</span>
+          <%= f.input :ten_words %>
+        </div>
+        <div class="carousel-item">
+          <span>Have you ever thought about Organ donation after circulatory death?</span>
+          <%= f.input :representative %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <%= f.submit class:'btn btn-primary' %>
     </div>
-    <div class="carousel-item">
-      <span>What was your the best memory?</span>
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <span>The music you want to play at the funeral</span>
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <% end  %>
 </div>
-<%# <div data-controller="carousel" class="swiper-container">
-  <div class="swiper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
-</div> %>
-<%# /<h1></h1> %>
-<%# <%= simple_form_for @funeral do |f| %>
-  <%# <%= f.input : music %>
-  <%# <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <%# <% end %>
