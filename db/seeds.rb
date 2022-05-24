@@ -5,6 +5,7 @@ words = ["Adaptable","Adept","Adventurous","Affectionate","Ambitious","Artistic"
 body_disposal = ["Cremation", "Aquamation", "Green Burial", "Traditional Burial"]
 memory = ["My son was three. We were on holiday in an outside restaurant with a huge table of family members. He got bored and restless at the table so I took him for a walk, we ended up lying on the grass looking at the stars just chatting. At one point we saw a shooting star but the best part was just being together chatting and feeling do close."]
 pus = ["Body Donation", "Organ Donation"]
+assets = ["< $500k", "$500k - 1$M", "$1M - $5M", "> $5M"]
 
 puts 'This is the end'
 Funeral.destroy_all
@@ -36,6 +37,14 @@ User.destroy_all
     memory: memory.sample,
     unaware_state: pus.sample
   )
+  Will.create!(
+    user_id: user.id,
+    assets_range: assets.sample,
+    primary_beneficiaries: Faker::Name.name,
+    residuary: Faker::Name.name,
+    donation: "#The injured #{Faker::Creature::Animal.name} Foundation",
+    signature: "Maybe remove this and replace with active record?"
+  )
 end
 
-puts "created #{User.count}users, #{Funeral.count} funerals."
+puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
