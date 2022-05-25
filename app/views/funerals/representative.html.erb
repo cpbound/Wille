@@ -1,0 +1,7 @@
+<div class="container">
+  <span>Have you ever thought about Organ donation after circulatory death?</span>
+  <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :representative %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+  <% end %>
+</div>

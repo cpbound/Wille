@@ -1,0 +1,7 @@
+<div class="container">
+  <span>What do you want to do when you become a vegetable patient?</span>
+  <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :unaware_state %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+  <% end %>
+</div>

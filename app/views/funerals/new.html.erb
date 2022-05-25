@@ -11,6 +11,10 @@
           <%= f.input :memory %>
         </div>
         <div class="carousel-item">
+          <span>The music you want to play at the funeral</span>
+          <%= f.input :music %>
+        </div>
+        <div class="carousel-item">
           <span>Is there anyone you’d never like to call to a funeral?</span>
           <%= f.input :no_invite %>
         </div>
@@ -24,7 +28,7 @@
         </div>
         <div class="carousel-item">
           <span> In the event that you became too sick to speak for yourself, who would you like to speak for you?</span>
-          <%= f.input :ten_words %>
+          <%= f.input :arrangement %>
         </div>
         <div class="carousel-item">
           <span>Have you ever thought about Organ donation after circulatory death?</span>
@@ -39,7 +43,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-      <%= f.submit class:'btn btn-primary' %>
     </div>
+    <%= f.submit class:'btn btn-success' %>
   <% end  %>
 </div>

@@ -1,0 +1,7 @@
+<div class="container">
+  <span>The music you want to play at the funeral</span>
+  <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :music %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+  <% end %>
+</div>
