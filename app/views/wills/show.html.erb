@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Your Will</h1>
+  <div class="card">
+    <div class="card-body">
+      <%= "I, #{@will.user.name}, #{@will.user.age} of #{@will.user.address} being of sound mind and body, hereby make the following pronouncements. I hereby leave the majority of my assets (about #{@will.assets_range}) primarily to #{@will.primary_beneficiaries} with my sizable DVD collection going to #{@will.residuary} to deal with as they see fit. I also wish that #{@will.donation} receives a small donation. I have always strived to be a #{@will.user.funerals.first.ten_words} person. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. #{@will.signature}" %>
+    </div>
+  </div>
+</div>

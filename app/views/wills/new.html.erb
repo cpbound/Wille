@@ -1,8 +1,10 @@
-<%= simple_form_for(@will) do |f| %>
-  <%= f.input :assets_range %>
-  <%= f.input :residuary %>
-  <%= f.input :primary_beneficiaries %>
-  <%= f.input :donation %>
-  <%= f.input :signature %>
-  <%= f.submit "next" %>
-<% end %>
+<div class="container mt-5">
+  <%= simple_form_for(@will) do |f| %>
+    <%= f.input :assets_range, collection: ["< $500k", "$500k - 1$M", "$1M - $5M", "> $5M"], as: :radio_buttons %>
+    <%= f.input :primary_beneficiaries %>
+    <%= f.input :residuary %>
+    <%= f.input :donation %>
+    <%= f.signature_field :signature %>
+    <%= f.submit "next" %>
+  <% end %>
+</div>

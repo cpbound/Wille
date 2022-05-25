@@ -42,7 +42,7 @@ User.destroy_all
     assets_range: assets.sample,
     primary_beneficiaries: Faker::Name.name,
     residuary: Faker::Name.name,
-    donation: "#The injured #{Faker::Creature::Animal.name} Foundation",
+    donation: "The injured #{Faker::Creature::Animal.name} Foundation",
     signature: "Maybe remove this and replace with active record?"
   )
 end

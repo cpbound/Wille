@@ -37,6 +37,7 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 # ADDED FUN STUFFS
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'pundit'
+gem "john_hancock"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
