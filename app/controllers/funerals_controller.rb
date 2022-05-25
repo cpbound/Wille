@@ -5,6 +5,7 @@ class FuneralsController < ApplicationController
 
   def show
     @funeral = Funeral.create(user: current_user)
+    authorize @funeral
     case step
     when :ten_words
     when :memory
@@ -21,6 +22,7 @@ class FuneralsController < ApplicationController
 
   def update
     @funeral = Funeral.where(user: current_user).first
+    authorize @funeral
     case params[:id]
     when "ten_words"
       @funeral.ten_words = funeral_params[params[:id]]
@@ -42,14 +44,14 @@ class FuneralsController < ApplicationController
     if @funeral.save
       redirect_to next_wizard_path
     end
-
-  def index
-    @funerals = policy_scope(funeral)
-
   end
 
   def finish_wizard_path
     funerals_path
+  end
+
+  def index
+    @funerals = policy_scope(Funeral)
   end
 
   private
