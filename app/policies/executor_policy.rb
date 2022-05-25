@@ -6,6 +6,10 @@ class ExecutorPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    true
+  end
+
   def edit?
     true
   end
