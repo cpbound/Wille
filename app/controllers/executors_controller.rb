@@ -13,18 +13,22 @@ class ExecutorsController < ApplicationController
     end
   end
 
-    def edit
-      @executor = Executor.find(params[:id])
-    end
+  def edit
+    @executor = Executor.find(params[:id])
+    authorize @executor
+    @executor.user = current_user
+  end
 
-    def update
-   @executor = Executor.find(params[:id])
-      @executor.update(executor_params)
-      redirect_to wills_path
-    end
+  def update
+    @executor = Executor.find(params[:id])
+    authorize @executor
+    @executor.update(executor_params)
+    redirect_to wills_path
+  end
 
-    private
-    def executor_params
-      params.require(:executor).permit(:name, :email, :address, :phone)
-    end
+  private
+
+  def executor_params
+    params.require(:executor).permit(:name, :email, :address, :phone)
+  end
 end

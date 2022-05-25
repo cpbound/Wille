@@ -1,4 +1,5 @@
 class FuneralsController < ApplicationController
+
   include Wicked::Wizard
   steps :ten_words, :memory, :music, :no_invite, :sending_message, :unaware_state, :arrangement, :representative
 
@@ -41,24 +42,14 @@ class FuneralsController < ApplicationController
     if @funeral.save
       redirect_to next_wizard_path
     end
-  end
 
-  def new
-    @funeral = Funeral.new
-    @funeral = Funeral.find(params[:id])
-  end
+  def index
+    @funerals = policy_scope(funeral)
 
-  def create
-    @funeral = Funeral.new(funeral_params)
-    @funeral.save
   end
 
   def finish_wizard_path
     funerals_path
-  end
-
-  def index
-    @funerals = Funeral.all
   end
 
   private
