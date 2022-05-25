@@ -14,6 +14,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import 'swiper/css/bundle'
+// import 'swiper/css/bundle'
 import "controllers"
 import "bootstrap"
+
+

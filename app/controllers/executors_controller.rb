@@ -1,6 +1,7 @@
 class ExecutorsController < ApplicationController
   def new
     @executor = Executor.new
+    authorize @executor
   end
 
   def create
