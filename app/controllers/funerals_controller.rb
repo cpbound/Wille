@@ -1,10 +1,11 @@
 class FuneralsController < ApplicationController
   def index
-    @funerals = Funeral.all
+    @funerals = policy_scope(funeral)
   end
 
   def new
     @funeral = Funeral.new
+    authorize @funeral
   end
 
   def create
