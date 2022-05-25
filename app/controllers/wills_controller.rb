@@ -8,6 +8,7 @@ class WillsController < ApplicationController
 
   def show
     @will = Will.find(params[:id])
+    authorize @will
   end
 
   def new
@@ -19,9 +20,8 @@ class WillsController < ApplicationController
     @will = Will.new(will_params)
     @will.user = current_user
     authorize @will
-    @will.user = current_user
     if @will.save
-      redirect_to will_path
+      redirect_to will_path(@will.id)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class WillsController < ApplicationController
 
     def update
       @will = Will.find(params[:id])
-       authorize @will
+      authorize @will
       @will.update(will_params)
       redirect_to will_path(@will)
     end
@@ -42,7 +42,7 @@ class WillsController < ApplicationController
   private
 
   def will_params
-    params.require(:will).permit(:user, :assets_range, :residuary, :primary_beneficiaries, :donation, :signature)
+    params.require(:will).permit(:id, :user, :assets_range, :residuary, :primary_beneficiaries, :donation, :signature)
   end
 
 end
