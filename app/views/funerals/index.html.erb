@@ -1,12 +1,23 @@
 <% @funerals.each do |funeral| %>
-  <%= funeral.user.photo %>
+  <p></p>
+  <% if funeral.user.photo.attached? %>
+    <%= cl_image_tag funeral.user.photo.key %>
+  <% end  %>
+  <p></p>
   <%= funeral.music %>
+  <p></p>
   <%= funeral.no_invite %>
+  <p></p>
   <%= funeral.sending_message %>
+  <p></p>
   <%= funeral.arrangement %>
+  <p></p>
   <%= funeral.representative %>
+  <p></p>
   <%= funeral.ten_words %>
+  <p></p>
   <%= funeral.memory %>
+  <p></p>
   <%= funeral.unaware_state %>
 <% end %>
 <%= link_to "Want to know more?", articles_path %>

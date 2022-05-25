@@ -1,0 +1,7 @@
+<div class="container">
+  <span>Is there anything you wanted to say but couldn’t?</span>
+  <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :sending_message %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+  <% end %>
+</div>

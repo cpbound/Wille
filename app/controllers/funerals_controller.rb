@@ -1,17 +1,55 @@
 class FuneralsController < ApplicationController
+
+  include Wicked::Wizard
+  steps :ten_words, :memory, :music, :no_invite, :sending_message, :unaware_state, :arrangement, :representative
+
+  def show
+    @funeral = Funeral.create(user: current_user)
+    case step
+    when :ten_words
+    when :memory
+    when :music
+    when :no_invite
+
+    when :sending_message
+    when :unaware_state
+    when :arrangement
+    when :representative
+    end
+    render_wizard
+  end
+
+  def update
+    @funeral = Funeral.where(user: current_user).first
+    case params[:id]
+    when "ten_words"
+      @funeral.ten_words = funeral_params[params[:id]]
+    when "memory"
+      @funeral.memory = funeral_params[params[:id]]
+    when "music"
+      @funeral.music = funeral_params[params[:id]]
+    when "no_invite"
+      @funeral.no_invite = funeral_params[params[:id]]
+    when "sending_message"
+      @funeral.sending_message = funeral_params[params[:id]]
+    when "unaware_state"
+      @funeral.unaware_state = funeral_params[params[:id]]
+    when "arrangement"
+      @funeral.arrangement = funeral_params[params[:id]]
+    when "representative"
+      @funeral.representative = funeral_params[params[:id]]
+    end
+    if @funeral.save
+      redirect_to next_wizard_path
+    end
+
   def index
     @funerals = policy_scope(funeral)
+
   end
 
-  def new
-    @funeral = Funeral.new
-    authorize @funeral
-  end
-
-  def create
-    @funeral = Funeral.new(funeral_params)
-    @funeral.save
-    redirect_to new_funeral_path(@funeral)
+  def finish_wizard_path
+    funerals_path
   end
 
   private

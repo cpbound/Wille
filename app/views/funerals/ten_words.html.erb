@@ -1,0 +1,7 @@
+<div class="container">
+  <span>10 words that describe your life so far</span>
+  <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+    <%= f.text_field :ten_words %>
+    <%= f.submit 'Next', :class => 'btn btn-primary' %>
+  <% end %>
+</div>
