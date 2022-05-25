@@ -1,14 +1,19 @@
-<% @funerals.each do |funeral| %>
-  <% if funeral.user.photo.attached? %>
-    <%= cl_image_tag funeral.user.photo.key %>
-  <% end  %>
-  <%= funeral.music %>
-  <%= funeral.no_invite %>
-  <%= funeral.sending_message %>
-  <%= funeral.arrangement %>
-  <%= funeral.representative %>
-  <%= funeral.ten_words %>
-  <%= funeral.memory %>
-  <%= funeral.unaware_state %>
-<% end %>
-<%= link_to "Want to know more?", articles_path %>
+<div class="container">
+  <div class="cards">
+    <% @funerals.each do |funeral| %>
+      <% if funeral.user.photo.attached? %>
+        <%= cl_image_tag funeral.user.photo.key %>
+      <% end %>
+      <%= funeral.music %>
+      <%= funeral.no_invite %>
+      <%= funeral.sending_message %>
+      <%= funeral.arrangement %>
+      <%= funeral.representative %>
+      <%= funeral.ten_words %>
+      <%= funeral.memory %>
+      <%= funeral.unaware_state %>
+    <% end %>
+  </div>
+  <%= link_to "Create will" , new_will_path, class: 'btn btn-primary' %>
+  <%= link_to "Want to know more?", articles_path, class: 'btn btn-primary' %>
+</div>
