@@ -27,17 +27,20 @@ class WillsController < ApplicationController
     end
   end
 
-    def edit
-      @will = Will.find(params[:id])
-       authorize @will
-    end
+  def edit
+    @will = Will.find(params[:id])
+    authorize @will
+  end
 
-    def update
-      @will = Will.find(params[:id])
+  def update
+    if @will = Will.find(params[:id])
       authorize @will
       @will.update(will_params)
       redirect_to will_path(@will)
+    else
+      render :new
     end
+  end
 
   private
 

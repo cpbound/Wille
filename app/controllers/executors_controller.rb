@@ -15,7 +15,7 @@ class ExecutorsController < ApplicationController
   end
 
   def edit
-    @executor = Executor.find(params[:id])
+    @executor = Executor.find(executor_params)
     authorize @executor
     @executor.user = current_user
   end
