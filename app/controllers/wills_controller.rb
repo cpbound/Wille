@@ -1,9 +1,7 @@
 class WillsController < ApplicationController
-
-
   def index
     @wills = policy_scope(Will)
-    @executors = Executor.where(user: current_user)
+    @executors = current_user.executor
   end
 
   def show
@@ -29,7 +27,7 @@ class WillsController < ApplicationController
 
     def edit
       @will = Will.find(params[:id])
-       authorize @will
+      authorize @will
     end
 
     def update

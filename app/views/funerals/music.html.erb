@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p>The music you want to play at the funeral</p>
+    <p><%= Funeral::QUESTIONS[:music] %></p>
     <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.text_field :music %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>

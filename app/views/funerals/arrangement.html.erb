@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p> In the event that you became too sick to speak for yourself, who would you like to speak for you?</p>
+   <p> <%= Funeral::QUESTIONS[:arrangement] %></p>
     <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.text_field :arrangement %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p>Is there anyone you’d never like to call to a funeral?</p>
+        <p> <%= Funeral::QUESTIONS[:no_invite] %></p>
     <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.text_field :no_invite %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>
