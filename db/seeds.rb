@@ -45,6 +45,13 @@ User.destroy_all
     donation: "The injured #{Faker::Creature::Animal.name} Foundation",
     signature: "Maybe remove this and replace with active record?"
   )
+  Executor.create!(
+    user_id: user.id,
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
+    phone: Faker::PhoneNumber.cell_phone
+  )
 end
 
 puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
