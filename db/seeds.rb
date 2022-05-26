@@ -48,3 +48,8 @@ User.destroy_all
 end
 
 puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
+
+
+words.each do |word|
+  ActsAsTaggableOn::Tag.new(name: word).save
+end

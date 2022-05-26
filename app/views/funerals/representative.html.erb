@@ -1,8 +1,8 @@
 <div class="container">
   <div class="card-contents">
     <p>Have you ever thought about Organ donation after circulatory death?</p>
-    <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-      <%= f.text_field :representative %>
+    <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+      <%= f.input :representative, as: :radio_buttons %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>
     <% end %>
   </div>
