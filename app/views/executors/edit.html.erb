@@ -11,21 +11,20 @@
         </div>
         <div class="tab">
           <h6>What's their name?</h6>
-          <%= @executor.name %>
           <p>
-            <input placeholder="Name..." oninput="this.className = ''" name="fname"></p>
+            <input value=<%= @executor.name %> oninput="this.className = ''" name="fname"></p>
         </div>
         <div class="tab">
           <h6>What's their address?</h6>
-          <p><input placeholder="City" oninput="this.className = ''" name="dd"></p>
+          <p><input value=<%= @executor.address %> oninput="this.className = ''" name="dd"></p>
         </div>
         <div class="tab">
           <h6>What's their phone number?</h6>
-          <p><input placeholder="Favourite Shopping site" oninput="this.className = ''" name="email"></p>
+          <p><input value=<%= @executor.phone %>oninput="this.className = ''" name="email"></p>
         </div>
         <div class="tab">
           <h6>What's their email?</h6>
-          <p><input placeholder="Favourite car" oninput="this.className = ''" name="uname"></p>
+          <p><input value=<%= @executor.email %> value=<%= @executor.email %>  oninput="this.className = ''" name="uname"></p>
         </div>
         <div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
           <h3>Your executor is now here!</h3>
