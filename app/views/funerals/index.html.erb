@@ -1,19 +1,43 @@
 <div class="container">
-  <div class="cards">
-    <% @funerals.each do |funeral| %>
-      <% if funeral.user.photo.attached? %>
-        <%= cl_image_tag funeral.user.photo.key %>
+  <div class="row">
+    <div class="flex-container col col-md-8">
+      <% Funeral::QUESTIONS.each do |type, question| %>
+        <div class="item-flip" on:click={toggleFlip} class:flipped={isFlipped}>
+          <div class="item-flip-inner">
+            <div class="item-flip-front">
+              <div class="item-flip-content">
+                <%= question %>
+              </div>
+            </div>
+            <div class="item-flip-back">
+              <div class="item-flip-content">
+                <% if @funerals.first.user.photo.attached? %>
+                  <%= cl_image_tag @funeral.first.user.photo.key %>
+                <% end %>
+                <p> <%= @funerals.first.send(type) %> </p>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-      <%= funeral.music %>
-      <%= funeral.no_invite %>
-      <%= funeral.sending_message %>
-      <%= funeral.arrangement %>
-      <%= funeral.representative %>
-      <%= funeral.ten_words %>
-      <%= funeral.memory %>
-      <%= funeral.unaware_state %>
-    <% end %>
+    </div>
+    <div class="will-container col col-md-4">
+      <div class="card-will" style="margin-bottom: 34px;;">
+        <%= image_tag "will2.webp", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to "Create will" , new_will_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+      <div class="card-will">
+        <%= image_tag "landing.jpg", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to "Want to know more?", articles_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
   </div>
-  <%= link_to "Create will" , new_will_path, class: 'btn btn-primary' %>
-  <%= link_to "Want to know more?", articles_path, class: 'btn btn-primary' %>
 </div>
