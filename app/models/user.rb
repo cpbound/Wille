@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :funerals, dependent: :destroy
   has_many :wills, dependent: :destroy
   has_one_attached :photo
-
+  has_one :executor
 end
