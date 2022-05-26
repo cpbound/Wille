@@ -19,7 +19,24 @@
     font-weight: lighter;
     margin-bottom: 30px;
   }
-  .btn {
-    padding: 15px 50px;
-  }
+
+.button{
+  padding: 15px 30px;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: #4cc9f0;
+  color: white;
+  font-size: 17px;
+  margin: 0px 34px;
+}
+
+.button a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.button:hover{
+  transform: scale(1.1, 1.1);
+}
+
 }
