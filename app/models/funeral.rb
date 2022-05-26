@@ -1,5 +1,7 @@
 class Funeral < ApplicationRecord
   belongs_to :user
+  acts_as_taggable_on :tags
+
 
   QUESTIONS = {
     memory: "What was your the best memory?",
@@ -11,4 +13,5 @@ class Funeral < ApplicationRecord
     ten_words: "10 words that describe your life so far",
     unaware_state: "What do you want to do when you become a vegetable patient?",
   }
+
 end

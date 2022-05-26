@@ -57,6 +57,6 @@ class FuneralsController < ApplicationController
   private
 
   def funeral_params
-    params.require(:funeral).permit(:music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state)
+    params.require(:funeral).permit(:music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, :tag_list)
   end
 end

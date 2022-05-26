@@ -55,4 +55,9 @@ User.destroy_all
 end
 
 puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
+
 puts "and #{Executor.count} executors to carry out their wishes. Good luck."
+
+words.each do |word|
+  ActsAsTaggableOn::Tag.new(name: word).save
+end
