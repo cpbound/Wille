@@ -5,7 +5,7 @@ class ExecutorsController < ApplicationController
   end
 
   def create
-    @executor = Executor.new
+    @executor = Executor.new(executor_params)
     @executor.user = current_user
     if @executor.save
       redirect_to wills_path
