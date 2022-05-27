@@ -62,6 +62,25 @@ puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} will
 
 puts "and #{Executor.count} executors to carry out their wishes. Good luck."
 
+puts "Creating the alpha and the omega"
+User.create!(
+  name: "Tim Cope",
+  phone: "0898-505050",
+  address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
+  email: "tim@wille.net",
+  password: "123123",
+  marital_status: Faker::Demographic.marital_status,
+  age: rand(25..50),
+  children: (0..4).to_a.sample,
+  pets: (0..4).to_a.sample,
+)
+puts "####"
+puts User.last.name
+puts User.last.email
+puts "123123"
+puts "####"
+puts "This be the User for pitch"
+
 words.each do |word|
   ActsAsTaggableOn::Tag.new(name: word).save
 end
