@@ -26,7 +26,6 @@ class FuneralsController < ApplicationController
     case params[:id]
     when "ten_words"
       @funeral.tag_list.add(funeral_params[:tag_list])
-
     when "memory"
       @funeral.memory = funeral_params[params[:id]]
     when "music"
