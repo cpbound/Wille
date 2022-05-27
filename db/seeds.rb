@@ -24,7 +24,7 @@ User.destroy_all
     phone: Faker::PhoneNumber.cell_phone,
     address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
     email: Faker::Internet.email,
-    password: "s",
+    password: "123123",
     marital_status: Faker::Demographic.marital_status,
     age: rand(25..50),
     children: (0..4).to_a.sample,
