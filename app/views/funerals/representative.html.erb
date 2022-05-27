@@ -2,7 +2,7 @@
   <div class="card-contents">
     <p> <%= Funeral::QUESTIONS[:representative] %></p>
     <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-      <%= f.input :representative, as: :radio_buttons %>
+      <%= f.input :representative, as: :radio_buttons, legend_tag: false %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>
     <% end %>
   </div>

@@ -1,5 +1,6 @@
 class Funeral < ApplicationRecord
   belongs_to :user
+  validates :user, uniqueness: true
   acts_as_taggable_on :tags
 
 
@@ -14,4 +15,11 @@ class Funeral < ApplicationRecord
     unaware_state: "What do you want to do when you become a vegetable patient?",
   }
 
+  def ten_words
+    tag_list.join(", ")
+  end
+
+  def representative
+   super ? "Yes" : "No"
+  end
 end
