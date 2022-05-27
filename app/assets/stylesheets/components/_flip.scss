@@ -1,4 +1,6 @@
-
+.title {
+  margin: 34px;
+}
 
 .will-container {
   height: 100vh;
@@ -58,6 +60,7 @@
 
 .item-flip-back {
   transform: rotateX(180deg);
+  background: linear-gradient(45deg, #DBDFFD, #9BA3EB, #DBDFFD);
 }
 
 .item-flip.flipped .item-flip-inner {
