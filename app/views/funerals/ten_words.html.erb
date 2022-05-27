@@ -3,6 +3,7 @@
     <p> <i class="bi bi-journal-text"></i> <%= Funeral::QUESTIONS[:ten_words] %> </p>
     <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.input :tag_list,
+                value_method: :name,
                  legend_tag: false,
                   as: :check_boxes,
                   collection: ActsAsTaggableOn::Tag.all,

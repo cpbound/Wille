@@ -12,10 +12,10 @@
             </div>
             <div class="item-flip-back">
               <div class="item-flip-content">
-                <% if @funerals.first.user.photo.attached? %>
+                <% if @funeral.user.photo.attached? %>
                   <%= cl_image_tag @funeral.first.user.photo.key %>
                 <% end %>
-                <p> <%= @funerals.first.send(type) %> </p>
+                <p><%= @funeral.send(type) %> </p>
               </div>
             </div>
           </div>

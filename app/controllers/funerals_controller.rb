@@ -4,7 +4,7 @@ class FuneralsController < ApplicationController
   steps :ten_words, :memory, :music, :no_invite, :sending_message, :unaware_state, :arrangement, :representative
 
   def show
-    @funeral = Funeral.create(user: current_user)
+    @funeral = current_user.funeral || Funeral.create(user: current_user)
     authorize @funeral
     case step
     when :ten_words
@@ -21,11 +21,12 @@ class FuneralsController < ApplicationController
   end
 
   def update
-    @funeral = Funeral.where(user: current_user).first
+    @funeral = current_user.funeral
     authorize @funeral
     case params[:id]
     when "ten_words"
-      @funeral.ten_words = funeral_params[params[:id]]
+      @funeral.tag_list.add(funeral_params[:tag_list])
+
     when "memory"
       @funeral.memory = funeral_params[params[:id]]
     when "music"
@@ -51,12 +52,14 @@ class FuneralsController < ApplicationController
   end
 
   def index
-    @funerals = policy_scope(Funeral)
+    @funeral = policy_scope(Funeral)
   end
+
+
 
   private
 
   def funeral_params
-    params.require(:funeral).permit(:music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, :tag_list)
+    params.require(:funeral).permit(:music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, tag_list: [])
   end
 end
