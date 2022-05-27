@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p> <i class="bi bi-journal-text"></i> <%= Funeral::QUESTIONS[:ten_words] %> </p>
+    <p> <i class="bi bi-journal-text"></i> <%= Funeral::QUESTIONS[:ten_words] %> <i class="bi bi-journal-text"></i> </p>
     <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.input :tag_list,
                  legend_tag: false,
