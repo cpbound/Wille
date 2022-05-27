@@ -1,7 +1,7 @@
 require "faker"
 require "open-uri"
 
-words = ["Adaptable","Adventurous","Affectionate","Ambitious","Artistic","Bright","Candid","Chill","Compassionate","Competitive","Charismatic","Considerate","Courageous","Creative","Curious","Dependable","Dynamic","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Fun","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Knowledgeable","Kind","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Tough","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
+words = ["Adventurous","Affectionate","Ambitious","Artistic","Bright","Candid","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Dynamic","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Fun","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Knowledgeable","Kind","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Tough","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
 
 body_disposal = ["Cremation", "Aquamation", "Green Burial", "Traditional Burial"]
 
