@@ -1,10 +1,12 @@
-<div class="container">
+<div class="container" data-controller="make-pdf">
   <h1>Your Will</h1>
   <div class="card">
-    <div class="card-body" id="will-card">
+    <div class="card-body" id="will-card" data-make-pdf-target="printText">
       <p> <%= "I, #{@will.user.name}, #{@will.user.age} of #{@will.user.address} being of sound mind and body, make the following pronouncements.\n I hereby leave the majority of my assets (about #{@will.assets_range}) primarily to #{@will.primary_beneficiaries} and subsequently #{@will.residuary} to deal with as they see fit. I also wish that #{@will.donation} receives a small donation." %></p>
-      <p> <%= "I have always strived to be a #{@will.user.funerals.first.ten_words} person. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. #{@will.signature}" %></p>
+      <p> <%= "I have always strived to be the most #{@will.user.funeral.ten_words} person I could be.In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. #{@will.signature}" %></p>
     </div>
   </div>
   <%= link_to "Executors", new_executor_path, class: 'btn btn-light'  %>
+  <button class="btn btn-primary btn-m" data-action="click->make-pdf#make_pdf">Make a PDF
+  </button>
 </div>
