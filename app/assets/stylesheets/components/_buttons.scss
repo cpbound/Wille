@@ -1,0 +1,26 @@
+.btn {
+  border-radius: 6px;
+  transition: 0.3s;
+   color: white;
+  font-size: 17px;
+  padding: 10px 20px;
+}
+
+.btn i{
+  color: white;
+
+}
+ .btn a{
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+ }
+.btn a:hover{
+  transform: scale(1.1, 1.1);
+  color: white;
+}
+
+.btn:hover{
+  transform: scale(1.1, 1.1);
+  color: white;
+}
