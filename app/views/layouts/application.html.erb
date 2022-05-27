@@ -31,3 +31,13 @@
     </div>
   </div>
 </html>
+
+
+<script>
+/* scroll menu  */
+
+window.addEventListener('scroll', function(){
+  var header = document.querySelector('.navbar-wagon');
+  header.classList.toggle("sticky", window.scrollY > 0);
+})
+</script>
