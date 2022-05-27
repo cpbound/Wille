@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p><%= Funeral::QUESTIONS[:music] %></p>
+    <p><i class="bi bi-music-note-list"></i> <%= Funeral::QUESTIONS[:music] %> <i class="bi bi-music-note-list"></i></p>
     <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.text_field :music %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>

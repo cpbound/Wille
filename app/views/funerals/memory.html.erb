@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-contents">
-    <p> <%= Funeral::QUESTIONS[:memory] %></p>
+    <p> <i class="bi bi-memory"></i> <%= Funeral::QUESTIONS[:memory] %> <i class="bi bi-memory"></i> </p>
     <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.text_field :memory %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>

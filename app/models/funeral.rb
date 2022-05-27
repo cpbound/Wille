@@ -12,7 +12,7 @@ class Funeral < ApplicationRecord
     representative: "Have you ever thought about Organ donation after circulatory death?",
     sending_message: "Is there anything you wanted to say but couldn’t?",
     ten_words: "10 words that describe your life so far",
-    unaware_state: "What do you want to do when you become a vegetable patient?",
+    unaware_state: "Imagine you become a vegetable patient",
   }
 
   def ten_words
