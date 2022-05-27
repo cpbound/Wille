@@ -1,4 +1,5 @@
 .card-contents{
+  background-color: white;
   width: 60%;
   margin: 0 auto;
   text-align: center;
@@ -16,12 +17,11 @@ font-size: 20px;
   height: 450px;
 
 }
-.btn-primary{
-  margin-top: 15px;
-  color: white;
-  border-radius: 10px;
-}
 
 .card-body {
   display: grid;
+}
+.card-contents .btn{
+width: 30%;
+margin-top: 15px;
 }
