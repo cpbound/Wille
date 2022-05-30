@@ -15,7 +15,10 @@
                 <% if @funeral.user.photo.attached? %>
                   <%= cl_image_tag @funeral.user.photo.key %>
                 <% end %>
-                <p><%= @funeral.send(type) %> </p>
+                <p><%= link_to funerals_path, method: :get do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+                  <%= @funeral.send(type) %></p>
               </div>
             </div>
           </div>

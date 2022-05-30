@@ -45,6 +45,7 @@ class FuneralsController < ApplicationController
     end
   end
 
+
   def finish_wizard_path
     funerals_path
   end
@@ -52,8 +53,6 @@ class FuneralsController < ApplicationController
   def index
     @funeral = policy_scope(Funeral)
   end
-
-
 
   private
 
