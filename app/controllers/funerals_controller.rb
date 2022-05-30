@@ -11,7 +11,6 @@ class FuneralsController < ApplicationController
     when :memory
     when :music
     when :no_invite
-
     when :sending_message
     when :unaware_state
     when :arrangement
@@ -27,7 +26,7 @@ class FuneralsController < ApplicationController
     when "ten_words"
       @funeral.tag_list.add(funeral_params[:tag_list])
     when "memory"
-      @funeral.memory = funeral_params[params[:id]]
+      @funeral.update(funeral_params)
     when "music"
       @funeral.music = funeral_params[params[:id]]
     when "no_invite"
@@ -59,6 +58,6 @@ class FuneralsController < ApplicationController
   private
 
   def funeral_params
-    params.require(:funeral).permit(:music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, tag_list: [])
+    params.require(:funeral).permit(:photo, :music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, tag_list: [])
   end
 end

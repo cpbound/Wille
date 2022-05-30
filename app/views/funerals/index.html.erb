@@ -1,5 +1,5 @@
 <div class="container">
-<h3 class="title">This is what you think!</h3>
+  <h3 class="title">This is what you think!</h3>
   <div class="row">
     <div class="flex-container col col-md-10">
       <% Funeral::QUESTIONS.each do |type, question| %>
@@ -13,7 +13,7 @@
             <div class="item-flip-back">
               <div class="item-flip-content">
                 <% if @funeral.user.photo.attached? %>
-                  <%= cl_image_tag @funeral.first.user.photo.key %>
+                  <%= cl_image_tag @funeral.user.photo.key %>
                 <% end %>
                 <p><%= @funeral.send(type) %> </p>
               </div>
