@@ -1,6 +1,12 @@
 .alert {
   position: fixed;
-  bottom: 16px;
+  bottom: 300px;
+  left: 16px;
   right: 16px;
   z-index: 1000;
+  padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #2396ba;
+    border-radius: 2px;
+    background-color: lavender;
 }
