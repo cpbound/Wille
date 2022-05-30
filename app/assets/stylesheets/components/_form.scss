@@ -137,3 +137,17 @@ button:focus{
 .thanks-message {
     display: none
 }
+
+.form-label, .col-form-label {
+  font-size: 26px;
+  margin-top: 35px;
+
+}
+
+.form-check-label {
+  font-size: 18px;
+}
+
+.col-form-label {
+  display: none;
+}

@@ -17,3 +17,5 @@ console.log("before bootstrap")
 import "bootstrap"
 import "controllers"
 console.log("after bootstrap")
+
+//= require john_hancock
