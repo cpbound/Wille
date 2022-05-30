@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="card-container">
-    <div class="card-contents">
+  <div class="card-container unaware_state">
+    <div class="card-contents unaware_state">
       <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
       <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.text_field :unaware_state %>
