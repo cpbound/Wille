@@ -10,6 +10,9 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>
+      <% if @funeral.ten_words.present? %>
+        <%= link_to 'Finish', funerals_path, class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
   </div>
 </div>
