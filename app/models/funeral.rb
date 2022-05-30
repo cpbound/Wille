@@ -2,6 +2,7 @@ class Funeral < ApplicationRecord
   belongs_to :user
   validates :user, uniqueness: true
   acts_as_taggable_on :tags
+  has_one_attached :photo
 
 
   QUESTIONS = {
@@ -22,4 +23,8 @@ class Funeral < ApplicationRecord
   def representative
    super ? "Yes" : "No"
   end
+
+ def memory
+  self.photo.key
+ end
 end

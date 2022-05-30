@@ -2,8 +2,9 @@
   <div class="card-container">
     <div class="card-contents">
       <p> <i class="bi bi-memory"></i> <%= Funeral::QUESTIONS[:memory] %> <i class="bi bi-memory"></i> </p>
-      <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-        <%= f.text_field :memory %>
+      <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+        <%# <%= f.text_field :memory %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
       <% end %>
     </div>
