@@ -2,8 +2,8 @@
   <h1>Your Will</h1>
   <div class="card">
     <div class="card-body" id="will-card" data-make-pdf-target="printText">
-      <p> <%= "I, #{@will.user.name}, #{@will.user.age} of #{@will.user.address} being of sound mind and body, make the following pronouncements.\n I hereby leave the majority of my assets (about #{@will.assets_range}) primarily to #{@will.primary_beneficiaries} and subsequently #{@will.residuary} to deal with as they see fit. I also wish that #{@will.donation} receives a small donation." %></p>
-      <p> <%= "I have always strived to be the most #{@will.user.funeral.ten_words} person I could be.In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. #{@will.signature}" %></p>
+      <p> "I, <strong><%= "#{@will.user.name}, #{@will.user.age}"%></strong> of  <strong><%="#{@will.user.address}"%> </strong> "being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets about "<strong><%="(#{@will.assets_range})"%></strong>" primarily to <strong><%="#{@will.primary_beneficiaries}"%> </strong> and subsequently <strong><%="#{@will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@will.donation}"%></strong> receives a small donation."</p>
+      <p> "I have always strived to be the most" <strong><%= "#{@will.user.funeral.ten_words}" %> </strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. <strong><%= "#{@will.signature}" %> </strong></p>
     </div>
   </div>
   <div class="btn-container d-flex justify-content-between mt-3">

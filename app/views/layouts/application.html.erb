@@ -2,7 +2,8 @@
 <html>
   <head>
     <div id='wrapper'>
-      <%= favicon_link_tag asset_path('favicon.ico') %>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
       <title>Wille</title>
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <%= csrf_meta_tags %>
@@ -19,26 +20,30 @@
       <%= yield %>
     </body>
   </div>
-  <div class="footer">
+  <%# <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-github"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="footer-copyright">
       This website is made with <i class="fas fa-heart"></i> Reina <img class="avatar" alt="avatar" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1652706034/emytp6r1z6scgu0utfic.jpg" /> Chris <img class="avatar" alt="avatar" src="https://avatars.githubusercontent.com/u/97549793?v=4" /> Bora <img class="avatar" alt="avatar" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649038887/eorexhkcougse3ypnt6g.jpg" />
     </div>
-  </div>
+  </div> %>
 </html>
-
-
 <script>
-/* scroll menu  */
+  /* scroll menu  */
 
-window.addEventListener('scroll', function(){
-  var header = document.querySelector('.navbar-wagon');
-  header.classList.toggle("sticky", window.scrollY > 0);
-})
+  window.addEventListener('scroll', function(){
+    const header = document.querySelector('.navbar-wagon');
+    const footer = document.querySelector('.footer');
+    header.classList.toggle("sticky", window.scrollY > 0);
+    footer.classList.toggle("sticky", window.scrollY > 0);
+  })
+
+
+    var canvas = document.getElementById("JohnHancock-canvas");
+    var context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
 </script>

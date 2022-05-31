@@ -1,11 +1,20 @@
 <div class="container">
-  <div class="card-container">
-    <div class="card-contents">
+  <div class="card-container unaware_state">
+    <div class="card-contents unaware_state">
       <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
       <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.text_field :unaware_state %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
+        <% if @funeral.unaware_state.present? %>
+          <%= link_to 'Finish', funerals_path, class: 'btn btn-primary' %>
+        <% end %>
       <% end %>
     </div>
+  </div>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>Yay!</strong> 🎉 Vegetative state: The person has depressed consciousness, brain stem function and can breathe without support. Patients in a vegetative state may respond to pain or loud sounds, go through sleep-wake cycles, and exhibit involuntary motions. A person in a vegetative state for more than a year is considered to be in a permanent vegetative state with extremely low chance of recovery.</span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
   </div>
 </div>

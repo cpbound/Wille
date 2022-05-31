@@ -5,6 +5,9 @@
       <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.text_field :arrangement %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
+        <% if @funeral.arrangement.present? %>
+          <%= link_to 'Finish', funerals_path, class: 'btn btn-primary' %>
+        <% end %>
       <% end %>
     </div>
   </div>

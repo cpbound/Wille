@@ -6,6 +6,10 @@
   padding: 30px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  &.unaware_state{
+    width: 50%;
+  }
 }
 .card-contents p{
   font-weight: bold;
@@ -16,6 +20,11 @@ font-size: 20px;
   align-items: center;
   height: 450px;
 
+  &.unaware_state{
+  margin-top: 5rem;
+    margin-bottom: 2rem;
+    height: auto;
+  }
 }
 
 .card-body {
@@ -24,4 +33,12 @@ font-size: 20px;
 .card-contents .btn{
 width: 30%;
 margin-top: 15px;
+}
+#card-contents-btn{
+  display: flex;
+  justify-content: center;
+}
+#card-contents-btn .btn{
+  width: auto;
+  margin-right: 20px;
 }

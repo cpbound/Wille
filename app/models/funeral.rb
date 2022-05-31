@@ -2,6 +2,7 @@ class Funeral < ApplicationRecord
   belongs_to :user
   validates :user, uniqueness: true
   acts_as_taggable_on :tags
+  has_one_attached :photo
 
 
   QUESTIONS = {
@@ -12,14 +13,16 @@ class Funeral < ApplicationRecord
     representative: "Have you ever thought about Organ donation after circulatory death?",
     sending_message: "Is there anything you wanted to say but couldn’t?",
     ten_words: "10 words that describe your life so far",
-    unaware_state: "Imagine you become a vegetable patient",
+    unaware_state: "Imagine you become a vegetable patient"
   }
+
 
   def ten_words
     tag_list.join(", ")
   end
 
   def representative
-   super ? "Yes" : "No"
+    super ? "Yes" : "No"
   end
+
 end
