@@ -6,7 +6,16 @@
       <p> <%= "I have always strived to be the most #{@will.user.funeral.ten_words} person I could be.In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. #{@will.signature}" %></p>
     </div>
   </div>
-  <%= link_to "Executors", new_executor_path, class: 'btn btn-light'  %>
-  <button class="btn btn-light" data-action="click->make-pdf#make_pdf">Make a PDF
-  </button>
+  <div class="btn-container d-flex justify-content-between mt-3">
+    <button class="btn btn-primary" data-action="click->make-pdf#make_pdf">Make a PDF
+    </button>
+  </div>
+  <%= form_tag invite_will_path(@will), method: :post do %>
+    <%= text_field_tag :email,
+    params[:email],
+    class: "form-control",
+    placeholder: "Enter email:"
+    %>
+    <%= submit_tag "Invite", class: "btn btn-primary" %>
+  <% end %>
 </div>

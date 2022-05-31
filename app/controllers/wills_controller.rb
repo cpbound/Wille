@@ -1,7 +1,9 @@
 class WillsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:executor]
+  skip_before_action :authenticate_user!, only: [:executor]
+
   def index
     @wills = policy_scope(Will)
-    @executors = current_user.executor
   end
 
   def show
@@ -25,12 +27,10 @@ class WillsController < ApplicationController
     end
   end
 
-
   def edit
-    @will = Will.find(params[:id])
+    @will = current_user.will
     authorize @will
   end
-
 
   def update
     if @will = Will.find(params[:id])
@@ -42,10 +42,31 @@ class WillsController < ApplicationController
     end
   end
 
+  def invite
+    @will = Will.find(params[:id])
+    authorize @will
+    UserMailer.with(will: @will, email: params[:email]).invite.deliver_now
+    redirect_to will_path(@will)
+  end
+
+  def executor
+    if @will = Will.find(params[:id])
+      authorize @will
+      @will.update(executor: executor_params)
+      redirect_to will_path(@will)
+    else
+      render :new
+    end
+  end
+
   private
 
+  def executor_params
+    params.permit(:executor_id)
+  end
+
   def will_params
-    params.require(:will).permit(:id, :user, :assets_range, :residuary, :primary_beneficiaries, :donation, :signature)
+    params.require(:will).permit(:user_id, :assets_range, :residuary, :primary_beneficiaries, :donation, :executor_id)
   end
 
 end

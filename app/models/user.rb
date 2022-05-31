@@ -6,8 +6,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   has_one :funeral, dependent: :destroy
-  has_many :wills, dependent: :destroy
-  has_many :executors, dependent: :destroy
+  has_one :will, dependent: :destroy
   has_one_attached :photo
   has_one :executor
 end

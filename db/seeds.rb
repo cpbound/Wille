@@ -1,7 +1,7 @@
 require "faker"
 require "open-uri"
 
-words = ["Adventurous","Affectionate","Ambitious","Artistic","Bright","Candid","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Dynamic","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Fun","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Knowledgeable","Kind","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Tough","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
+words = ["Adventurous","Affectionate","Ambitious","Artistic","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Dynamic","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Fun","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Knowledgeable","Kind","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Tough","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
 
 body_disposal = ["Cremation", "Aquamation", "Green Burial", "Traditional Burial"]
 
@@ -42,6 +42,7 @@ User.destroy_all
     unaware_state: pus.sample
   )
   Will.create!(
+    executor_id: user.id,
     user_id: user.id,
     assets_range: assets.sample,
     primary_beneficiaries: Faker::Name.name,
@@ -49,37 +50,37 @@ User.destroy_all
     donation: "The injured #{Faker::Creature::Animal.name} Foundation",
     signature: "Maybe remove this and replace with active record?"
   )
-  Executor.create!(
-    user_id: user.id,
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
-    phone: Faker::PhoneNumber.cell_phone
-  )
+  # Executor.create!(
+  #   user_id: user.id,
+  #   name: Faker::Name.name,
+  #   email: Faker::Internet.email,
+  #   address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
+  #   phone: Faker::PhoneNumber.cell_phone
+  # )
 end
 
 puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
 
-puts "and #{Executor.count} executors to carry out their wishes. Good luck."
+# puts "and #{Executor.count} executors to carry out their wishes. Good luck."
 
-puts "Creating the alpha and the omega"
-User.create!(
-  name: "Tim Cope",
-  phone: "0898-505050",
-  address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
-  email: "tim@wille.net",
-  password: "123123",
-  marital_status: Faker::Demographic.marital_status,
-  age: rand(25..50),
-  children: (0..4).to_a.sample,
-  pets: (0..4).to_a.sample,
-)
-puts "####"
-puts User.last.name
-puts User.last.email
-puts "123123"
-puts "####"
-puts "This be the User for pitch"
+# puts "Creating the alpha and the omega"
+# User.create!(
+#   name: "Tim Cope",
+#   phone: "0898-505050",
+#   address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
+#   email: "tim@wille.net",
+#   password: "123123",
+#   marital_status: Faker::Demographic.marital_status,
+#   age: rand(25..50),
+#   children: (0..4).to_a.sample,
+#   pets: (0..4).to_a.sample
+# )
+# puts "####"
+# puts User.last.name
+# puts User.last.email
+# puts "123123"
+# puts "####"
+# puts "This be the User for pitch"
 
 words.each do |word|
   ActsAsTaggableOn::Tag.new(name: word).save

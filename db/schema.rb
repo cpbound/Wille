@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_26_084441) do
+ActiveRecord::Schema.define(version: 2022_05_30_030842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,17 +46,6 @@ ActiveRecord::Schema.define(version: 2022_05_26_084441) do
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "executors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "address"
-    t.string "phone"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_executors_on_user_id"
   end
 
   create_table "funerals", force: :cascade do |t|
@@ -133,13 +122,15 @@ ActiveRecord::Schema.define(version: 2022_05_26_084441) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "executor_id"
+    t.index ["executor_id"], name: "index_wills_on_executor_id"
     t.index ["user_id"], name: "index_wills_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "executors", "users"
   add_foreign_key "funerals", "users"
   add_foreign_key "taggings", "tags"
   add_foreign_key "wills", "users"
+  add_foreign_key "wills", "users", column: "executor_id"
 end
