@@ -7,8 +7,15 @@
     </div>
   </div>
   <div class="btn-container d-flex justify-content-between mt-3">
-    <%= link_to "Executors", new_executor_path, class: 'btn btn-primary'  %>
     <button class="btn btn-primary" data-action="click->make-pdf#make_pdf">Make a PDF
     </button>
   </div>
+  <%= form_tag invite_will_path(@will), method: :post do %>
+    <%= text_field_tag :email,
+    params[:email],
+    class: "form-control",
+    placeholder: "Enter email:"
+    %>
+    <%= submit_tag "Invite", class: "btn btn-primary" %>
+  <% end %>
 </div>

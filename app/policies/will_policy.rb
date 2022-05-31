@@ -18,10 +18,15 @@ class WillPolicy < ApplicationPolicy
     return true
   end
 
+  def invite?
+    record.user == user
+  end
+
+  def executor?
+    return true
+  end
+
   def update?
     record.user == user
-    return true
-    # - record: the restaurant passed to the `authorize` method in controller
-    # - user:   the `current_user` signed in with Devise.
   end
 end
