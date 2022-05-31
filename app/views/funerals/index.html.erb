@@ -16,6 +16,7 @@
                   <i class="fas fa-edit"></i>
                 <% end %>
                 <span class="fw-bold"><%= @funeral.send(type) %></span>
+                <%= social_share_button_tag(@funeral[:type]) %>
               </div>
             </div>
           </div>

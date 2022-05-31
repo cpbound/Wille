@@ -21,7 +21,7 @@ class WillsController < ApplicationController
     @will.user = current_user
     authorize @will
     if @will.save
-      redirect_to will_path(@will.id)
+      redirect_to will_path(@will)
     else
       render :new
     end
@@ -46,6 +46,7 @@ class WillsController < ApplicationController
     @will = Will.find(params[:id])
     authorize @will
     UserMailer.with(will: @will, email: params[:email]).invite.deliver_now
+    flash[:notice] = "Invitation sent!"
     redirect_to will_path(@will)
   end
 

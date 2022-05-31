@@ -2,8 +2,9 @@
 <html>
   <head>
     <div id='wrapper'>
-      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-      <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+      <%= favicon_link_tag asset_path('favicon.ico') %>
+      <%# <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> %>
+      <%# <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"> %>
       <title>Wille</title>
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <%= csrf_meta_tags %>
