@@ -16,7 +16,7 @@
                   <i class="fas fa-edit"></i>
                 <% end %>
                 <span class="fw-bold"><%= @funeral.send(type) %></span>
-                <%= social_share_button_tag(@funeral[:type]) %>
+                <%= social_share_button_tag(@funeral, url: "www.google.com") %>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
     <div class="will-container col col-md-3">
       <div class="card-will">
         <div class="card-body p-0">
-          <%= cl_image_tag @funeral.photo.key , class:"card-img-top"%>
+          <%= cl_image_tag @funeral.photo.key, class:"card-img-top"%>
         </div>
       </div>
       <div class="card-will">
