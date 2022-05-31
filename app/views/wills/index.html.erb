@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="text-center mt-5 mb-5">User Will board</h2>
   <div class="cards">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2021/03/10/13/19/grave-6084525_1280.png" alt="Card image cap" width="300" height="400">
       <div class="card-body">
         <h5 class="card-title">Funeral</h5>
@@ -9,27 +9,27 @@
         <%= link_to "Update", funerals_path, class:"btn btn-primary" %>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2013/12/17/10/08/hand-229777_1280.jpg" alt="Card image cap" width="300" height="400">
       <div class="card-body">
         <h5 class="card-title">Will</h5>
-        <p class="card-text">Do you want change? <br>Click "Update"!</p>
+        <p class="card-text">Do you want change? Click "Update"!</p>
         <%= link_to "Update", edit_will_path(current_user), class:"btn btn-primary" %>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <%# <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2020/05/12/11/27/vintage-5162504_1280.jpg" alt="Card image cap" width="300" height="400">
       <div class="card-body">
         <h5 class="card-title">Executors</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <%# <%= link_to "update", edit_executor_path(current_user), class:"btn btn-primary" %> %>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
+        <%# <%= link_to "update", edit_executor_path(current_user), class:"btn btn-primary" %>
+      <%# </div> %>
+    <%# </div> %>
+    <div class="card">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2016/02/05/13/11/fairy-tale-1180921_1280.png" alt="Card image cap" width="300" height="400">
       <div class="card-body">
         <h5 class="card-title">Articles</h5>
-        <p class="card-text">Funerals, death, will... Everything sounds terrible? Read this!</p>
+        <p class="card-text">Funerals, will... Everything sounds terrible? Read this!</p>
         <%= link_to "Explore", articles_path, class:"btn btn-primary" %>
       </div>
     </div>
