@@ -39,9 +39,9 @@
             collection: Will::CATEGORIES4 %>
           <label for="donationAmountRange" class="form-label"><i class="bi bi-calculator"></i> Donation Percentage <span id="rangePrimary"> </span>%</label>
           <input type="range" class="form-range" id="donationAmountRange" name="will[donation_amount]" step="5" onchange="rangePrimary.innerText=value">
-        </div>
-        <%= f.submit "next", class:"btn btn-primary mt-3" %>
-      <% end %>
+          <%= f.submit "next", class:"btn btn-primary mt-3" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
