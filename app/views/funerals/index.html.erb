@@ -10,13 +10,15 @@
                 <span class="fw-bold"><%= question %></span>
               </div>
             </div>
-            <div class="item-flip-back">
+            <div class="item-flip-back position-relative">
               <div class="item-flip-content">
                 <%= link_to funerals_path, method: :get do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
                 <span class="fw-bold"><%= @funeral.send(type) %></span>
-                <%= social_share_button_tag(@funeral, url: "www.google.com") %>
+                <div class="position-absolute top-0 end-0 mt-1 me-1">
+                  <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{question + ": "}%20#{@funeral.send(type)}", class: "twitter-share-button", data: {size: "large"}   %>
+                </div>
               </div>
             </div>
           </div>
