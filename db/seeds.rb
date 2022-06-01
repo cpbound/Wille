@@ -1,7 +1,7 @@
 require "faker"
 require "open-uri"
 
-words = ["Adventurous","Affectionate","Ambitious","Artistic","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Dynamic","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Fun","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Knowledgeable","Kind","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Tough","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
+words = ["Adventurous","Affectionate","Ambitious","Artistic","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
 
 body_disposal = ["Cremation", "Aquamation", "Green Burial", "Traditional Burial"]
 
@@ -47,8 +47,7 @@ User.destroy_all
     assets_range: assets.sample,
     primary_beneficiaries: Faker::Name.name,
     residuary: Faker::Name.name,
-    donation: "The injured #{Faker::Creature::Animal.name} Foundation",
-    signature: "Maybe remove this and replace with active record?"
+    donation: "The injured #{Faker::Creature::Animal.name} Foundation"
   )
   # Executor.create!(
   #   user_id: user.id,
