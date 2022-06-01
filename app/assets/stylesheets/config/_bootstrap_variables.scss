@@ -17,10 +17,13 @@ $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 
+
 // Buttons & inputs' radius
 $border-radius:    6px;
 $border-radius-lg: 6px;
 $border-radius-sm: 6px;
 
-
 // Override other variables below!
+.no-validate .is-valid + label {
+color: black !important;
+}

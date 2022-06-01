@@ -33,10 +33,18 @@
       </div>
       <div class="card-will">
         <div class="card-body p-0">
-          <%= link_to new_will_path, class: 'text-black text-decoration-none' do %>
-            <%= image_tag "will2.webp", class:"card-img-top" %>
-            <h5 class="card-title">Create a will</h5>
-            <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
+          <% if @funeral.user.will.present? %>
+            <%= link_to edit_will_path(@funeral.user.will), class: 'text-black text-decoration-none' do %>
+              <%= image_tag "will2.webp", class:"card-img-top" %>
+              <h5 class="card-title">Edit a will</h5>
+              <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
+            <% end %>
+          <% else %>
+            <%= link_to new_will_path, class: 'text-black text-decoration-none' do %>
+              <%= image_tag "will2.webp", class:"card-img-top" %>
+              <h5 class="card-title">Create a will</h5>
+              <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
+            <% end %>
           <% end %>
         </div>
       </div>
