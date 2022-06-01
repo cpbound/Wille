@@ -1,5 +1,5 @@
 meta_product_name: "Wille"
 meta_title: "Wille - How will you be remembered?"
 meta_description: "Confronting what happens after death doesn't need to be painful. With Wille there's a way consider how you want to die in the 21st century."
-meta_image: "landing2.jpg" # should exist in `app/assets/images/`
+meta_image: "meta_img.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Ca

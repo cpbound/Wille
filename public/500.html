@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Oh wow! Oh wow! Oh Wow! (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  .error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
     margin: 0;
   }
 
-  .rails-default-error-page div.dialog {
+  .error-page div.dialog {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
   }
+  .quote {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+  }
 
-  .rails-default-error-page div.dialog > div {
+  .error-page div.dialog > div {
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: #000000 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -31,13 +35,13 @@
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
-  .rails-default-error-page h1 {
+  .error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #b3111c;
     line-height: 1.5em;
   }
 
-  .rails-default-error-page div.dialog > p {
+  .error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
     background-color: #F7F7F7;
@@ -54,13 +58,18 @@
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
+<body class="error-page">
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <h2>500</h2>
+      <div class="quote">
+      <p>"I hope the exit is joyful</p>
+      <p>and I hope never to return."</p>
+      <h2>- Frida Kahlo</h2>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+      <h1>This is the end of all things.</h1>
+    </div>
+    <p>We really messed this one up I think.</p>
   </div>
 </body>
 </html>
