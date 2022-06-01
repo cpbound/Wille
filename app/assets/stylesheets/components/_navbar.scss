@@ -2,15 +2,8 @@
   justify-content: space-between;
   background: #3a0ca3;
   padding-bottom: 0px !important;
-  position: fixed;
   width: 100%;
   top: 0;
-  opacity: 0;
-  &.sticky {
-    transition: all 0.4s ease;
-    z-index: 999;
-    opacity: 1;
-  }
 }
 
 .navbar-lewagon .navbar-collapse {
