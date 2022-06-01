@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <div class="card-contents">
+  <div class="card-contents funeral-margin">
     <p> <i class="bi bi-journal-text"></i> <%= Funeral::QUESTIONS[:ten_words] %> <i class="bi bi-journal-text"></i> </p>
     <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.input :tag_list,
