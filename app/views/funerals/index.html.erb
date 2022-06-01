@@ -7,12 +7,12 @@
           <div class="item-flip-inner">
             <div class="item-flip-front">
               <div class="item-flip-content">
-                <span class="fw-bold"><%= question %></span>
+                <span class="fw-bold fs-5"><%= question %></span>
               </div>
             </div>
             <div class="item-flip-back position-relative">
               <div class="item-flip-content">
-                <span class="fw-bold"><%= @funeral.send(type) %></span>
+                <span class="fw-bold fs-5"><%= @funeral.send(type) %></span>
                 <div class="position-absolute top-0 end-0 mt-1 me-1">
                   <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{question + ": "}%20#{@funeral.send(type)}", class: "twitter-share-button", data: {size: "large"}   %>
                 </div>
@@ -33,13 +33,13 @@
           <% if @funeral.user.will.present? %>
             <%= link_to edit_will_path(@funeral.user.will), class: 'text-black text-decoration-none' do %>
               <%= image_tag "will2.webp", class:"card-img-top" %>
-              <h5 class="card-title">Edit a will</h5>
+              <h5 class="card-title fw-bold">Edit a will</h5>
               <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
             <% end %>
           <% else %>
             <%= link_to new_will_path, class: 'text-black text-decoration-none' do %>
               <%= image_tag "will2.webp", class:"card-img-top" %>
-              <h5 class="card-title">Create a will</h5>
+              <h5 class="card-title fw-bold">Create a will</h5>
               <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
             <% end %>
           <% end %>
@@ -49,7 +49,7 @@
         <div class="card-body p-0">
           <%= link_to articles_path, class: 'text-black text-decoration-none' do %>
             <%= image_tag "landing.jpg", class:"card-img-top" %>
-            <h5 class="card-title">Learn more.</h5>
+            <h5 class="card-title fw-bold">Learn more</h5>
             <p class="card-text">Want to learn a little more? Find articles, videos and ideas to help you plan.</p>
           <% end %>
         </div>
