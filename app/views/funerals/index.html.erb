@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center mt-4 mb-4">This is what you think!</h1>
+  <h1 class="text-center mt-4 mb-4">Sounds like you?</h1>
   <div class="row">
     <div class="flex-container col col-md-9">
       <% Funeral::QUESTIONS.each do |type, question| %>
@@ -36,7 +36,7 @@
           <%= link_to new_will_path, class: 'text-black text-decoration-none' do %>
             <%= image_tag "will2.webp", class:"card-img-top" %>
             <h5 class="card-title">Create a will</h5>
-            <p class="card-text">You can make a will in a simple and easy way. We are here for you!</p>
+            <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
           <% end %>
         </div>
       </div>
@@ -44,8 +44,8 @@
         <div class="card-body p-0">
           <%= link_to articles_path, class: 'text-black text-decoration-none' do %>
             <%= image_tag "landing.jpg", class:"card-img-top" %>
-            <h5 class="card-title">Articles Funeral & Hospice</h5>
-            <p class="card-text">There are so good articles around the world what people are doing when they face own end</p>
+            <h5 class="card-title">Learn more.</h5>
+            <p class="card-text">Want to learn a little more? Find articles, videos and ideas to help you plan.</p>
           <% end %>
         </div>
       </div>

@@ -1,7 +1,8 @@
 <h1>Hi <%= @user.name %></h1>
 <h2><%= @will.user.name %> has invited asked you to do something very important</h2>
 <p>They have made an important decision about what's going to happen to them and their loved ones after they're gone and they want you to be a part of it.</p>
-<p><%= simple_form_for @will, url: will_url(@will), remote: true do |f| %>
+<p>
+  <%= simple_form_for @will, url: will_url(@will), remote: true do |f| %>
     <%= f.association :executor, as: :hidden, input_html: {value: @user.id} %>
     <%= f.submit "Accept", class: "btn btn-primary" %>
   <% end %>
