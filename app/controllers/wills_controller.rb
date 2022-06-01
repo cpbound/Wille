@@ -33,7 +33,6 @@ class WillsController < ApplicationController
   end
 
   def update
-    raise
     if @will = Will.find(params[:id])
       authorize @will
       @will.update(will_params)
