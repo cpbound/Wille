@@ -37,9 +37,8 @@
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: Will::CATEGORIES4 %>
-            
-          <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" class="form-range" id="customRange1">
+          <label for="donationAmountRange" class="form-label"><i class="bi bi-calculator"></i> Donation Percentage <span id="rangePrimary"> </span>%</label>
+          <input type="range" class="form-range" id="donationAmountRange" name="will[donation_amount]" step="5" onchange="rangePrimary.innerText=value">
         </div>
         <%= f.submit "next", class:"btn btn-primary mt-3" %>
       <% end %>

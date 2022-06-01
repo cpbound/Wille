@@ -10,10 +10,10 @@ class Funeral < ApplicationRecord
     arrangement: "In the event that you became too sick to speak for yourself, who would you like to speak for you?",
     music: "The music you want to play at the funeral",
     no_invite: "Is there anyone you’d never like to call to a funeral?",
-    representative: "Have you ever thought about Organ donation after circulatory death?",
+    representative: "Do you consider organ donation after circulatory death?",
     sending_message: "Is there anything you wanted to say but couldn’t?",
     ten_words: "10 words that describe your life so far",
-    unaware_state: "Imagine you become a vegetable patient"
+    unaware_state: "How would you want to be cared for if you in a persistent unconscious state"
   }
 
 
