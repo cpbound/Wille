@@ -7,7 +7,7 @@
         <%= f.input :photo, as: :file, label: false, class: 'mb-3 p-2 w-50' %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.memory.present? %>
-          <%= link_to 'Finish', funerals_path, class: 'btn btn-primary' %>
+          <%= link_to 'Finish', wills_path, class: 'btn btn-primary' %>
         <% end %>
       <% end %>
     </div>
