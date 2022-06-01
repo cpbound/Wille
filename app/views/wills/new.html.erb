@@ -2,21 +2,45 @@
   <div class="row justify-content-center align-items-center vh-100">
     <div class="col-12 col-sm-6">
       <h3 class="text-center">So simple you can make a will!</h3>
-      <%= simple_form_for(@will) do |f| %>
-        <%= f.label :assets_range, label: ('<i class="bi bi-cash-coin"></i> Assets range').html_safe, class:"form-label" %>
-        <%= f.input :assets_range,
+      <div class="border p-3">
+        <%= simple_form_for(@will) do |f| %>
+          <%= f.label :assets_range, label: ('<i class="bi bi-cash-coin"></i> Assets range').html_safe, class:"form-label" %>
+          <%= f.input :assets_range,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: Will::CATEGORIES %>
-        <%= f.label :primary_beneficiaries, label: ('<i class="bi bi-file-earmark-person"></i> Primary beneficiaries').html_safe, class:"form-label" %>
-        <%= f.text_field :primary_beneficiaries, placeholder:"Person who first in line receives the death benefit", class:"form-control" %>
-        <%= f.label :residuary, label: ('<i class="bi bi-piggy-bank"></i> Residuary').html_safe, class:"form-label" %>
-        <%= f.text_field :donation, placeholder:"I give my car to my niece, my rental property to my son...", class:"form-control" %>
-        <%= f.label :donation, label: ('<i class="bi bi-gift"></i> Donation').html_safe, class:"form-label" %>
-        <%= f.text_field :donation, placeholder:"Name of specific charity or organization", class:"form-control" %>
+          <%= f.label :primary_beneficiaries, label: ('<i class="bi bi-file-earmark-person"></i> Primary beneficiaries').html_safe, class:"form-label" %>
+          <%=f.input :primary_beneficiaries,
+           as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Will::CATEGORIES2 %>
+          <%# <%= f.label :residuary, label: ('<i class="bi bi-piggy-bank"></i> Residuary').html_safe, class:"form-label" %>
+          <%# <%=f.input :residuary,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Will::CATEGORIES3 %>
+          <%# <%= f.text_field :donation, placeholder:"I give my car to my niece, my rental property to my son...", class:"form-control" %>
+          <%= f.label :donation, label: ('<i class="bi bi-gift"></i> Donation').html_safe, class:"form-label" %>
+          <%=f.input :donation,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Will::CATEGORIES4 %>
+            
+          <label for="customRange1" class="form-label">Example range</label>
+          <input type="range" class="form-range" id="customRange1">
+        </div>
         <%= f.submit "next", class:"btn btn-primary mt-3" %>
       <% end %>
     </div>
