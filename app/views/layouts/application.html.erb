@@ -19,6 +19,24 @@
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
       <%= yield %>
+      <script>
+        window.twttr = (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                  t = window.twttr || {};
+                if (d.getElementById(id)) return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+
+                t._e = [];
+                t.ready = function(f) {
+                  t._e.push(f);
+                };
+
+                return t;
+              }(document, "script", "twitter-wjs"));
+      </script>
     </body>
   </div>
   <%# <div class="footer">
@@ -33,18 +51,3 @@
     </div>
   </div> %>
 </html>
-<script>
-  /* scroll menu  */
-
-  window.addEventListener('scroll', function(){
-    const header = document.querySelector('.navbar-wagon');
-    const footer = document.querySelector('.footer');
-    header.classList.toggle("sticky", window.scrollY > 0);
-    footer.classList.toggle("sticky", window.scrollY > 0);
-  })
-
-
-    var canvas = document.getElementById("JohnHancock-canvas");
-    var context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
-</script>
