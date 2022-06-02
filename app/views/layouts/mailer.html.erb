@@ -2,11 +2,74 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,400;0,600;1,100&family=Marck+Script&display=swap" rel="stylesheet" type="text/css">
     <style>
-      /* Email styles need to be inline */
+      body {background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(/assets/landing2);
+      background-size: cover;}
+
+      .container {
+        height: 200px;
+        position: relative;}
+
+      h1, h2 {color: black; font-family: Marck Script; }
+      a {
+        text-decoration: none;
+        color: black
+      }
+
+      p {color: black; font-family: Josefin Slab, bold;
+        font-size: 18px;}
+
+      .card {
+        padding-bottom: 32px;
+        background-color: #9f86c0e3;
+        display: inline-block;
+        position: relative;
+        padding-left: 24px;
+        padding-right: 24px;
+        border-radius: 12px;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 56px;
+        margin-bottom: 56px;
+      }
+
+      .button {
+
+        padding: 4px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: whitesmoke;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        position: relative;
+      }
+
+      .button:hover {background-color: #67d1f2}
+
+      .button:active {
+        background-color: #7E73FF;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      .banner {
+        height: 88px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), image-url("landing2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-color: whitesmoke;
+      }
     </style>
   </head>
-
   <body>
     <%= yield %>
   </body>
