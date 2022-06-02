@@ -1,6 +1,22 @@
 <div class="container mt-3">
-  <div class="card-contents funeral-margin">
+  <div class="card-contents funeral-margin" data-controller="loading">
+    <div class="progressbar">
+      <a class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">7</a>
+      <a href="#">8</a>
+      <a href="#">9</a>
+    </div>
     <p> <i class="bi bi-journal-text"></i> <%= Funeral::QUESTIONS[:ten_words] %> <i class="bi bi-journal-text"></i> </p>
+    <%# <div %>
+    <%# class="ldBar" %>
+    <%# data-stroke="data:ldbar/res, %>
+    <%# gradient(0,1,#f99,#ff9)" %>
+    <%# ></div> %>
     <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
       <%= f.input :tag_list,
                 value_method: :name,

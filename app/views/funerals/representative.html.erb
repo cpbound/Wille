@@ -1,6 +1,17 @@
 <div class="container">
   <div class="card-container unaware_state">
     <div class="card-contents unaware_state">
+      <div class="progressbar">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a class="active" href="#">8</a>
+        <a href="#">9</a>
+      </div>
       <p><i class="bi bi-person-circle"></i> <%= Funeral::QUESTIONS[:representative] %> <i class="bi bi-person-circle"></i></p>
       <div id="card-contents-btn">
         <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>

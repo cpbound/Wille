@@ -1,6 +1,17 @@
 <div class="container">
   <div class="card-container unaware_state">
     <div class="card-contents unaware_state" >
+      <div class="progressbar">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a class="active" href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+      </div>
       <p> <i class="bi bi-envelope-exclamation"></i> <%= Funeral::QUESTIONS[:sending_message] %> <i class="bi bi-envelope-exclamation"></i></p>
       <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.input :sending_message, label: false %>
