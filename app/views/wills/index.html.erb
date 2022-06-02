@@ -1,11 +1,11 @@
 <div class="container">
-  <h2 class="text-center mt-4 mb-2">Your plans at a glance</h2>
+  <h2 class="text-center mt-4 mb-2">My plans at a glance</h2>
   <p class="text-center fs-5">Is this what you want to leave behind?</p>
   <div class="two_cards">
     <div class="card">
       <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
       <div class="card-body">
-        <h3 class="card-title"><i class="fab fa-gratipay"></i> Your Best Memory</h3>
+        <h3 class="card-title"><i class="fab fa-gratipay"></i> My Best Memory</h3>
         <%# <p class="card-text">You can update your answers anytime.</p> %>
         <ul style="list-style:none" class="fs-6 p-1">
           <%= link_to funeral_path(:memory), class: 'text-decoration-none' do %>
@@ -92,7 +92,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title"><i class="fas fa-user-tag"></i> Yourself</h3>
+        <h3 class="card-title"><i class="fas fa-user-tag"></i> Myself</h3>
         <ul style="list-style:none" class="fs-6 p-1">
           <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
             <li class="mt-2 mb-3">
