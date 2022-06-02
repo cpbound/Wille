@@ -1,6 +1,17 @@
 <div class="container">
   <div class="card-container">
     <div class="card-contents">
+      <div class="progressbar">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a class="active" href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+      </div>
       <p><i class="bi bi-music-note-list"></i> <%= Funeral::QUESTIONS[:music] %> <i class="bi bi-music-note-list"></i></p>
       <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.text_field :music %>
