@@ -64,12 +64,19 @@
               <i class="far fa-edit"></i>
             </li>
           <% end %>
+          <%= link_to funeral_path(:body), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-flower1"></i>
+              <span>Burial?: </span><%= @current_user.funeral.body %>
+              <i class="far fa-edit"></i>
+            </li>
+          <% end %>
         </ul>
         <%# <%= link_to "Update", funerals_path, class:"btn btn-primary" %>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top" src="https://cdn.pixabay.com/photo/2013/12/17/10/08/hand-229777_1280.jpg" alt="Card image cap" width="300" height="400">
+    <%= image_tag "landing.jpg", class: "card-img-top" %>
       <%# <div class="card-body"> %>
       <div class="card-body" id="will-card" data-make-pdf-target="printText">
         <h3 class="card-title">Will</h3>
