@@ -1,7 +1,7 @@
 class FuneralsController < ApplicationController
 
   include Wicked::Wizard
-  steps :ten_words, :memory, :music, :no_invite, :sending_message, :unaware_state, :arrangement, :representative
+  steps :ten_words, :memory, :music, :no_invite, :sending_message, :unaware_state, :arrangement, :representative, :body
 
   def show
     @funeral = current_user.funeral || Funeral.create(user: current_user)
@@ -15,6 +15,7 @@ class FuneralsController < ApplicationController
     when :unaware_state
     when :arrangement
     when :representative
+    when :body
     end
     render_wizard
   end
@@ -39,6 +40,8 @@ class FuneralsController < ApplicationController
       @funeral.arrangement = funeral_params[params[:id]]
     when "representative"
       @funeral.representative = funeral_params[params[:id]]
+      when "body"
+      @funeral.body = funeral_params[params[:id]]
     end
     if @funeral.save
       redirect_to next_wizard_path
@@ -57,6 +60,6 @@ class FuneralsController < ApplicationController
   private
 
   def funeral_params
-    params.require(:funeral).permit(:photo, :music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, tag_list: [])
+    params.require(:funeral).permit(:photo, :music, :no_invite, :sending_message, :arrangement, :representative, :ten_words, :memory, :unaware_state, :body, tag_list: [])
   end
 end
