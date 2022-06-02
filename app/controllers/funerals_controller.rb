@@ -50,7 +50,7 @@ class FuneralsController < ApplicationController
 
 
   def finish_wizard_path
-    funerals_path
+    wills_path
   end
 
   def index
