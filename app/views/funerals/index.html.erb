@@ -1,39 +1,28 @@
 <div class="container">
-  <h1 class="text-center mt-4 mb-4">Sounds like you?</h1>
-  <div class="row">
-    <div class="flex-container col col-md-9">
-      <% Funeral::QUESTIONS.each do |type, question| %>
-        <div class="item-flip" on:click={toggleFlip} class:flipped={isFlipped}>
-          <div class="item-flip-inner">
-            <div class="item-flip-front">
-              <div class="item-flip-content">
-                <span class="fw-bold fs-5"><%= question %></span>
-              </div>
-            </div>
-            <div class="item-flip-back position-relative">
-              <div class="item-flip-content">
-                <span class="fw-bold fs-5"><%= @funeral.send(type) %></span>
-                <div class="position-absolute top-0 end-0 mt-1 me-1">
-                  <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{question + ": "}%20#{@funeral.send(type)}", class: "twitter-share-button", data: {size: "large"}   %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="will-container col col-md-3">
-      <div class="card-will">
-        <div class="card-body p-0">
-          <%= cl_image_tag @funeral.photo.key, class:"card-img-top"%>
-        </div>
+  <h2 class="text-center mt-4 mb-2">Your plans at a glance</h2>
+  <p class="text-center fs-5">Is this what you want to leave behind?</p>
+  <div class="two_cards">
+    <div class="card">
+      <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
+      <div class="card-body">
+        <h3 class="card-title"><i class="fab fa-gratipay"></i> Your Best Memory</h3>
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to funeral_path(:memory), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-memory"></i>
+              <span>Memory: </span><%= @current_user.funeral.memory %>
+            </li>
+          <% end %>
+        </ul>
       </div>
-      <div class="card-will">
+    </div>
+    <div class="card">
+      <div class="card-body">
         <div class="card-body p-0">
           <% if @funeral.user.will.present? %>
             <%= link_to edit_will_path(@funeral.user.will), class: 'text-black text-decoration-none' do %>
               <%= image_tag "will2.webp", class:"card-img-top" %>
-              <h5 class="card-title fw-bold">Edit a will</h5>
+              <h5 class="card-title fw-bold"><i class="fas fa-edit"></i> Edit a will</h5>
               <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
             <% end %>
           <% else %>
@@ -45,16 +34,91 @@
           <% end %>
         </div>
       </div>
-      <%# <div class="card-will">
-        <div class="card-body p-0">
-          <%= link_to articles_path, class: 'text-black text-decoration-none' do %>
-            <%# <%= image_tag "landing.jpg", class:"card-img-top" %>
-            <%# <h5 class="card-title fw-bold">Learn more</h5>
-            <p class="card-text">Want to learn a little more? Find articles, videos and ideas to help you plan.</p>
-          <% end %>
-        <%# </div>
-      </div> %> 
     </div>
   </div>
+  <div class="two_cards">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title"><i class="fas fa-bible"></i> Funeral </h3>
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to funeral_path(:music), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-music-note-list"></i>
+              <span>Music: </span><%= @current_user.funeral.music %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:music] + ": "}%20#{@funeral.music}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-x-fill"></i>
+              <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:no_invite] + ": "}%20#{@funeral.no_invite}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:sending_message), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-envelope-exclamation"></i>
+              <span>Message: </span><%= @current_user.funeral.sending_message %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:sending_message] + ": "}%20#{@funeral.sending_message}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:body), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-flower1"></i>
+              <span>Burial?: </span><%= @current_user.funeral.body %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:body] + ": "}%20#{@funeral.body}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title"><i class="fas fa-user-tag"></i> Yourself</h3>
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
+            <li class="mt-2 mb-3">
+              <i class="bi bi-journal-text"></i>
+              <span>Words: </span><%= @current_user.funeral.ten_words %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:ten_words] + ": "}%20#{@funeral.ten_words}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-file-earmark-medical-fill"></i>
+              <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:unaware_state] + ": "}%20#{@funeral.unaware_state}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:arrangement), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-rolodex"></i>
+              <span>Who speaks for you?: </span><%= @current_user.funeral.arrangement %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:arrangement] + ": "}%20#{@funeral.arrangement}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:representative), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-circle"></i>
+              <span>Organ donate?: </span><%= @current_user.funeral.representative %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Funeral::QUESTIONS[:representative] + ": "}%20#{@funeral.representative}", class: "twitter-share-button", data: {size: "small"}   %>
+            </li>
+          <% end %>
+        </ul>
+        <%# <%= link_to "Update", funerals_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <%# <div class="card-will">
+        <div class="card-body p-0">
+          <%= link_to articles_path, class: 'text-black text-decoration-none' do %>
+    <%# <%= image_tag "landing.jpg", class:"card-img-top" %>
+    <%# <h5 class="card-title fw-bold">Learn more</h5>
+            <p class="card-text">Want to learn a little more? Find articles, videos and ideas to help you plan.</p>
+          <% end %>
+    <%# </div>
+      </div> %>
+  </div>
+</div>
 </div>
 </div>
