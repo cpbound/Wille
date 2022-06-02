@@ -5,7 +5,7 @@
     <div class="card">
       <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
       <div class="card-body">
-        <h3 class="card-title">Funeral</h3>
+        <h3 class="card-title"><i class="fab fa-gratipay"></i> Your Best Memory</h3>
         <%# <p class="card-text">You can update your answers anytime.</p> %>
         <ul style="list-style:none" class="fs-6 p-1">
           <%= link_to funeral_path(:memory), class: 'text-decoration-none' do %>
@@ -21,10 +21,10 @@
       <div class="card-body">
         <% if @current_user.will.present? %>
           <div class="card-body" id="will-card" data-make-pdf-target="printText">
+            <h5 class="card-title fw-bold"><i class="fas fa-edit"></i> Edit a will</h5>
+            <p class="card-text">Ready to do more? Decide who gets what and designate someone to carry out your wishes.</p>
             <h3 class="card-title">Will</h3>
-            <p> "I, <strong><%= "#{@current_user.name}, #{@current_user.age}"%></strong> of  <strong><%="#{@current_user.address}"%> </strong> "being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets about "<strong><%="(#{@current_user.will.assets_range})"%></strong>" primarily to <strong><%="#{@current_user.will.primary_beneficiaries}"%> </strong> and subsequently <strong><%="#{@current_user.will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@current_user.will.donation}"%></strong> receives a small donation."</p>
-            <p> "I have always strived to be the most <strong><%= "#{@current_user.funeral.ten_words}" %> </strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. <strong><%= "#{@current_user.will.signature}" %> </strong></p>
-            <%# <p class="card-text">Do you want change? "Update anytime"!</p> %>
+            <%= render "text" %>
             <ul style="list-style:none" class="fs-6 p-1">
               <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
                 <li class="mb-3"> <i class="bi bi-cash-coin"></i>
@@ -57,30 +57,34 @@
   <div class="two_cards">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Funeral </h3>
+        <h3 class="card-title"><i class="fas fa-bible"></i> Funeral </h3>
         <ul style="list-style:none" class="fs-6 p-1">
           <%= link_to funeral_path(:music), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-music-note-list"></i>
               <span>Music: </span><%= @current_user.funeral.music %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:music] + ": "}%20#{@current_user.funeral.music}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-x-fill"></i>
               <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:no_invite] + ": "}%20#{@current_user.funeral.no_invite}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:sending_message), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-envelope-exclamation"></i>
               <span>Message: </span><%= @current_user.funeral.sending_message %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:sending_message] + ": "}%20#{@current_user.funeral.sending_message}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:body), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-flower1"></i>
               <span>Burial?: </span><%= @current_user.funeral.body %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:body] + ": "}%20#{@current_user.funeral.body}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
         </ul>
@@ -88,30 +92,34 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Yourself</h3>
+        <h3 class="card-title"><i class="fas fa-user-tag"></i> Yourself</h3>
         <ul style="list-style:none" class="fs-6 p-1">
           <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
             <li class="mt-2 mb-3">
               <i class="bi bi-journal-text"></i>
               <span>Words: </span><%= @current_user.funeral.ten_words %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:ten_words] + ": "}%20#{@current_user.funeral.ten_words}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-file-earmark-medical-fill"></i>
               <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:unaware_state] + ": "}%20#{@current_user.funeral.unaware_state}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:arrangement), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-rolodex"></i>
               <span>Who speaks for you?: </span><%= @current_user.funeral.arrangement %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:arrangement] + ": "}%20#{@current_user.funeral.arrangement}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
           <%= link_to funeral_path(:representative), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-circle"></i>
               <span>Organ donate?: </span><%= @current_user.funeral.representative %>
+              <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:representative] + ": "}%20#{@current_user.funeral.representative}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
         </ul>

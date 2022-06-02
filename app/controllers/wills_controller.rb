@@ -67,7 +67,7 @@ class WillsController < ApplicationController
   end
 
   def will_params
-    params.require(:will).permit(:user_id, :assets_range, :residuary, :primary_beneficiaries, :donation, :executor_id)
+    params.require(:will).permit(:user_id, :assets_range, :residuary, :primary_beneficiaries, :donation, :executor_id, :donation_amount)
   end
 
 end
