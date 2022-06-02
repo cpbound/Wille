@@ -1,10 +1,16 @@
-<h1>Hi </h1>
-<h2> has invited asked you to do something very important</h2>
-<p>They have made an important decision about what's going to happen to them and their loved ones after they're gone and they want you to be a part of it.</p>
-<p>
-  <%= simple_form_for @will, url: will_url(@will), remote: true do |f| %>
-    <%= f.association :executor, as: :hidden, input_html: {value: @user.id} %>
-    <%= f.submit "Accept", class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to "Accept", will_url(@will, executor_id: @user.id), method: :patch  %>
-</p>
+<div class="wrapper">
+  <div class="banner">
+    <h1>Wille[vɪ́lǝ]</h1>
+    <p>Start thinking about the big questions</p>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h1 class="invite-header">Hi <%= @user.name %></h1>
+      <h2 class="invite-sub"><%= @will.user.name %> has invited you to do something very important.</h2>
+      <p class="invite-body">They have made a big decision about what's going to happen to them after they're gone and they want you to be a part of it. <%= @will.user.name %> created their post life plan at Wille and would like you to be an executor of their wishes in the event of their death. If you feel comfortable and ready to take on the responsibilty, follow the link below and find out more.</p>
+      <div class="button">
+        <p><%= link_to "Accept", will_url(@will, executor_id: @user.id), method: :patch %></p>
+      </div>
+    </div>
+  </div>
+</div>

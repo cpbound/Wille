@@ -7,4 +7,10 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: @user).welcome
   end
 
+  def invite
+    @will = Will.last
+
+    UserMailer.with(will: @will, email: params[:email]).invite.deliver_now
+  end
+
 end
