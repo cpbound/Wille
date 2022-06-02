@@ -1,9 +1,9 @@
 <div class="container">
-  <h2 class="text-center mt-4 mb-2">User Will board</h2>
-  <p class="text-center fs-5">You can update anytime!</p>
+  <h2 class="text-center mt-4 mb-2">Your plans at a glance</h2>
+  <p class="text-center fs-5">Is this what you want to leave behind?</p>
   <div class="two_cards">
     <div class="card">
-      <img class="card-img-top" src="https://cdn.pixabay.com/photo/2021/03/10/13/19/grave-6084525_1280.png" alt="Card image cap" width="300" height="400">
+      <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
       <div class="card-body">
         <h3 class="card-title">Funeral</h3>
         <%# <p class="card-text">You can update your answers anytime.</p> %>
@@ -12,48 +12,56 @@
             <li class="mt-2 mb-3">
               <i class="bi bi-journal-text"></i>
               <span>Ten words: </span><%= @current_user.funeral.ten_words %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:memory), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-memory"></i>
               <span>Memory: </span><%= @current_user.funeral.memory %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:music), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-music-note-list"></i>
               <span>Music: </span><%= @current_user.funeral.music %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-x-fill"></i>
               <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:sending_message), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-envelope-exclamation"></i>
               <span>Message: </span><%= @current_user.funeral.sending_message %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-file-earmark-medical-fill"></i>
               <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:arrangement), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-rolodex"></i>
               <span>Who speaks for you?: </span><%= @current_user.funeral.arrangement %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to funeral_path(:representative), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-circle"></i>
               <span>Organ donate?: </span><%= @current_user.funeral.representative %>
+              <i class="far fa-edit"></i>
             </li>
           <% end %>
         </ul>
@@ -66,15 +74,17 @@
       <div class="card-body" id="will-card" data-make-pdf-target="printText">
         <h3 class="card-title">Will</h3>
         <p> "I, <strong><%= "#{@current_user.name}, #{@current_user.age}"%></strong> of  <strong><%="#{@current_user.address}"%> </strong> "being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets about "<strong><%="(#{@current_user.will.assets_range})"%></strong>" primarily to <strong><%="#{@current_user.will.primary_beneficiaries}"%> </strong> and subsequently <strong><%="#{@current_user.will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@current_user.will.donation}"%></strong> receives a small donation."</p>
-        <p> "I have always strived to be the most" <strong><%= "#{@current_user.funeral.ten_words}" %> </strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. <strong><%= "#{@current_user.will.signature}" %> </strong></p>
+        <p> "I have always strived to be the most <strong><%= "#{@current_user.funeral.ten_words}" %> </strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. <strong><%= "#{@current_user.will.signature}" %> </strong></p>
         <%# <p class="card-text">Do you want change? "Update anytime"!</p> %>
         <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
           <ul style="list-style:none" class="fs-6 p-1">
             <li class="mb-3"> <i class="bi bi-cash-coin"></i>
               <%= @current_user.will.assets_range %>
+              <i class="far fa-edit"></i>
             </li>
             <li class="mb-3"><i class="bi bi-file-earmark-person"></i>
               <%= @current_user.will.primary_beneficiaries %>
+              <i class="far fa-edit"></i>
             </li>
             <%# <li> %>
             <%# <i class="bi bi-piggy-bank"></i> %>
@@ -83,6 +93,7 @@
             <li class="mb-3">
               <i class="bi bi-gift"></i>
               <%= @current_user.will.donation %>
+              <i class="far fa-edit"></i>
             </li>
           </ul>
         <% end %>
