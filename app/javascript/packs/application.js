@@ -13,6 +13,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
 console.log("before bootstrap")
 import "bootstrap"
 import "controllers"
