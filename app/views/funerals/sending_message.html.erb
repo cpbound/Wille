@@ -2,8 +2,8 @@
   <div class="card-container unaware_state">
     <div class="card-contents unaware_state" >
       <p> <i class="bi bi-envelope-exclamation"></i> <%= Funeral::QUESTIONS[:sending_message] %> <i class="bi bi-envelope-exclamation"></i></p>
-      <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-        <%= f.text_field :sending_message %>
+      <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+        <%= f.input :sending_message, label: false %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.sending_message.present? %>
           <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>

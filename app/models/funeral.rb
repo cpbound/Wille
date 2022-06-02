@@ -14,10 +14,10 @@ class Funeral < ApplicationRecord
     sending_message: "Is there anything you'd always wanted to say but couldn't?",
     ten_words: "How would your describe yourself?",
     unaware_state: "How would you want to be cared for if you were in a persistent unconcious state?",
-    body: "Burial Type? 🪦"
+    body: "Burial Type?"
   }
 
-  CATEGORIES = ["Kill me softly", "I want to live longer by maschine", "I have no idea"]
+  CATEGORIES = ["Kill me softly", "I want to live longer by machine", "I have no idea"]
   CATEGORIES2 = ["Space burial", "Natural burial", "Tomb", "Scattering of my ashes in the river"]
 
   def ten_words

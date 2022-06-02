@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-container body">
     <div class="card-contents body">
-      <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
+      <p><i class="bi bi-flower1"></i> <%= Funeral::QUESTIONS[:body] %> <i class="bi bi-flower1"></i> </p>
       <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.input :body,
             as: :radio_buttons,
@@ -11,7 +11,7 @@
             input_html: {class: 'category-selector'},
             collection: Funeral::CATEGORIES2 %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
-        <% if @funeral.unaware_state.present? %>
+        <% if @funeral.body.present? %>
           <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
         <% end %>
       <% end %>
