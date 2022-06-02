@@ -8,75 +8,16 @@
         <h3 class="card-title">Funeral</h3>
         <%# <p class="card-text">You can update your answers anytime.</p> %>
         <ul style="list-style:none" class="fs-6 p-1">
-          <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
-            <li class="mt-2 mb-3">
-              <i class="bi bi-journal-text"></i>
-              <span>Words: </span><%= @current_user.funeral.ten_words %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
           <%= link_to funeral_path(:memory), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-memory"></i>
               <span>Memory: </span><%= @current_user.funeral.memory %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:music), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-music-note-list"></i>
-              <span>Music: </span><%= @current_user.funeral.music %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-person-x-fill"></i>
-              <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:sending_message), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-envelope-exclamation"></i>
-              <span>Message: </span><%= @current_user.funeral.sending_message %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-file-earmark-medical-fill"></i>
-              <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:arrangement), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-person-rolodex"></i>
-              <span>Who speaks for you?: </span><%= @current_user.funeral.arrangement %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:representative), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-person-circle"></i>
-              <span>Organ donate?: </span><%= @current_user.funeral.representative %>
-              <i class="far fa-edit"></i>
-            </li>
-          <% end %>
-          <%= link_to funeral_path(:body), class: 'text-decoration-none' do %>
-            <li class="mb-3">
-              <i class="bi bi-flower1"></i>
-              <span>Burial?: </span><%= @current_user.funeral.body %>
-              <i class="far fa-edit"></i>
             </li>
           <% end %>
         </ul>
-        <%# <%= link_to "Update", funerals_path, class:"btn btn-primary" %>
       </div>
     </div>
     <div class="card">
-    <%= image_tag "landing.jpg", class: "card-img-top" %>
       <%# <div class="card-body"> %>
       <div class="card-body" id="will-card" data-make-pdf-target="printText">
         <h3 class="card-title">Will</h3>
@@ -87,23 +28,85 @@
           <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3"> <i class="bi bi-cash-coin"></i>
               <%= @current_user.will.assets_range %>
-              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3"><i class="bi bi-file-earmark-person"></i>
               <%= @current_user.will.primary_beneficiaries %>
-              <i class="far fa-edit"></i>
             </li>
           <% end %>
           <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-gift"></i>
               <%= @current_user.will.donation %>
-              <i class="far fa-edit"></i>
             </li>
           <% end %>
         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="two_cards">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Funeral </h3>
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to funeral_path(:music), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-music-note-list"></i>
+              <span>Music: </span><%= @current_user.funeral.music %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-x-fill"></i>
+              <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:sending_message), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-envelope-exclamation"></i>
+              <span>Message: </span><%= @current_user.funeral.sending_message %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:body), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-flower1"></i>
+              <span>Burial?: </span><%= @current_user.funeral.body %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Yourslef</h3>
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
+            <li class="mt-2 mb-3">
+              <i class="bi bi-journal-text"></i>
+              <span>Words: </span><%= @current_user.funeral.ten_words %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-file-earmark-medical-fill"></i>
+              <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:arrangement), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-rolodex"></i>
+              <span>Who speaks for you?: </span><%= @current_user.funeral.arrangement %>
+            </li>
+          <% end %>
+          <%= link_to funeral_path(:representative), class: 'text-decoration-none' do %>
+            <li class="mb-3">
+              <i class="bi bi-person-circle"></i>
+              <span>Organ donate?: </span><%= @current_user.funeral.representative %>
+            </li>
+          <% end %>
+        </ul>
+        <%# <%= link_to "Update", funerals_path, class:"btn btn-primary" %>
       </div>
     </div>
   </div>
@@ -140,7 +143,7 @@
             <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/en/alison_killing_there_s_a_better_way_to_die_and_architecture_can_help" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div>
           </div>
           <br>
-          <h5 class="card-title">There’s a better way to die, and architecture can help</h5>
+          <h5 class="card-title">There���s a better way to die, and architecture can help</h5>
           <p class="card-text">In this short, provocative talk, architect Alison Killing looks at buildings where death and dying happen -- cemeteries, hospitals, homes. The way we die is changing, and the way we build for dying ... well, maybe that should too. It's a surprisingly fascinating look at a hidden aspect of our cities, and our lives.</p>
         </div>
       </div>
