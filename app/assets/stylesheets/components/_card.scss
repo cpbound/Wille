@@ -37,10 +37,6 @@
   inset: 0;
 }
 
-.card-title{
-  font-size: 16px;
-}
-
 .card-will{
   text-align: center;
   /* background-color: white; */
@@ -58,7 +54,14 @@
 .card a{
   color: black;
 }
-
+.two_cards li{
+font-size: 18px;
+font-weight: bold;
+}
+.two_cards .card-title{
+  font-size: 25px;
+  border-bottom: 1px solid darkgray;
+}
 .card-columns {
   min-height: 100vh;
   @include media-breakpoint-only(lg) {
