@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card-container body">
+    <div class="card-contents body">
+      <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
+      <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+        <%= f.input :body,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Funeral::CATEGORIES2 %>
+        <%= f.submit 'Next', :class => 'btn btn-primary' %>
+        <% if @funeral.unaware_state.present? %>
+          <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>❗</strong> If you choose a river you should be aware that the English Environment Agency say ‘It is acceptable’ with some provisos. Basically you need to look out for others and don’t put anything in the river that will not degrade eg plastics.</span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+</div>
