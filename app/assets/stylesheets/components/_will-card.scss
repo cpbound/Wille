@@ -2,13 +2,16 @@
   animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  }
+}
 
-  @keyframes fadeInAnimation {
+@keyframes fadeInAnimation {
   0% {
-  opacity: 0;
+    opacity: 0;
   }
   100% {
-  opacity: 1;
+    opacity: 1;
   }
-  }
+}
+.will-card-frame {
+  height: 90vh;
+}
