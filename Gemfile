@@ -37,12 +37,11 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 # ADDED FUN STUFFS
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'pundit'
-gem "john_hancock"
 gem 'letter_opener', group: :development
+gem 'dotenv-rails'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
