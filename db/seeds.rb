@@ -18,6 +18,8 @@ Will.destroy_all
 puts "The End"
 User.destroy_all
 
+User.create!(email: "bora@lewagon.com", password: "123456")
+
 10.times do
   user = User.create!(
     name: Faker::Name.name,
