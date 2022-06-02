@@ -11,7 +11,7 @@
           <%= link_to funeral_path(:ten_words), class: 'text-decoration-none' do %>
             <li class="mt-2 mb-3">
               <i class="bi bi-journal-text"></i>
-              <span>Ten words: </span><%= @current_user.funeral.ten_words %>
+              <span>Words: </span><%= @current_user.funeral.ten_words %>
               <i class="far fa-edit"></i>
             </li>
           <% end %>
@@ -76,27 +76,27 @@
         <p> "I, <strong><%= "#{@current_user.name}, #{@current_user.age}"%></strong> of  <strong><%="#{@current_user.address}"%> </strong> "being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets about "<strong><%="(#{@current_user.will.assets_range})"%></strong>" primarily to <strong><%="#{@current_user.will.primary_beneficiaries}"%> </strong> and subsequently <strong><%="#{@current_user.will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@current_user.will.donation}"%></strong> receives a small donation."</p>
         <p> "I have always strived to be the most <strong><%= "#{@current_user.funeral.ten_words}" %> </strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead. <strong><%= "#{@current_user.will.signature}" %> </strong></p>
         <%# <p class="card-text">Do you want change? "Update anytime"!</p> %>
-        <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
-          <ul style="list-style:none" class="fs-6 p-1">
+        <ul style="list-style:none" class="fs-6 p-1">
+          <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3"> <i class="bi bi-cash-coin"></i>
               <%= @current_user.will.assets_range %>
               <i class="far fa-edit"></i>
             </li>
+          <% end %>
+          <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3"><i class="bi bi-file-earmark-person"></i>
               <%= @current_user.will.primary_beneficiaries %>
               <i class="far fa-edit"></i>
             </li>
-            <%# <li> %>
-            <%# <i class="bi bi-piggy-bank"></i> %>
-            <%# <%= @current_user.will.residuary %>
-            <%# </li> %>
+          <% end %>
+          <%= link_to edit_will_path(@current_user.will), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-gift"></i>
               <%= @current_user.will.donation %>
               <i class="far fa-edit"></i>
             </li>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

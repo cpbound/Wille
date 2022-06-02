@@ -18,7 +18,7 @@
             <%= link_to "My Will", wills_path, class:"nav-link"  %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://randomuser.me/api/portraits/lego/5.jpg" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649038887/eorexhkcougse3ypnt6g.jpg" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user %>
                 <%= link_to "#{current_user.email}", new_user_session_path, class: "dropdown-item" %>

@@ -3,10 +3,10 @@
     <div class="card-contents">
       <p><i class="bi bi-person-rolodex"></i> <%= Funeral::QUESTIONS[:arrangement] %> <i class="bi bi-person-rolodex"></i></p>
       <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-        <%= f.text_field :arrangement %>
+       <%= f.text_field :arrangement %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.arrangement.present? %>
-          <%= link_to 'Finish', wills_path, class: 'btn btn-primary' %>
+          <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
         <% end %>
       <% end %>
     </div>
