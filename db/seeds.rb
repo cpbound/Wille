@@ -1,7 +1,7 @@
 require "faker"
 require "open-uri"
 
-words = ["Adventurous","Affectionate","Ambitious","Artistic","Chill","Compassionate","Considerate","Courageous","Creative","Curious","Dependable","Easygoing","Emotional","Energetic","Fearless","Forgiving","Friendly","Funny","Generous","Genuine","Happy","Honest","Independent","Risk-taker","Intelligent","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Perceptive","Persistent","Practical","Reliable","Responsible","Sensitive","Sincere","Strong","Sympathetic","Thoughtful","Tolerant","Trustworthy","Understanding","Vibrant","Warmhearted","Wise"]
+words = ["Adventurous","Affectionate","Artistic","Compassionate","Courageous","Curious","Dependable","Easygoing","Energetic","Forgiving","Funny","Generous","Genuine","Honest","Independent","Loyal","Loving","Modest","Motivated","Optimistic","Outgoing","Passionate","Patient","Responsible","Sensitive","Sincere","Sympathetic","Thoughtful","Trustworthy","Understanding","Vibrant","Warmhearted"]
 
 body_disposal = ["Cremation", "Aquamation", "Green Burial", "Traditional Burial"]
 
