@@ -16,6 +16,7 @@ class Funeral < ApplicationRecord
     unaware_state: "How would you want to be cared for if you were in a persistent unconcious state?"
   }
 
+  CATEGORIES = ["Kill me softly", "I want to live longer by maschine", "I have no idea"]
 
   def ten_words
     tag_list.join(", ")
