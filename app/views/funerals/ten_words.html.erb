@@ -6,7 +6,7 @@
                 value_method: :name,
                  legend_tag: false,
                   as: :check_boxes,
-                  collection: ActsAsTaggableOn::Tag.all,
+                  collection: ActsAsTaggableOn::Tag.all.sort,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
       <%= f.submit 'Next', :class => 'btn btn-primary' %>

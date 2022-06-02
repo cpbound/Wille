@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-container body">
     <div class="card-contents body">
-      <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
+      <p><i class="bi bi-flower1"></i> <%= Funeral::QUESTIONS[:body] %> <i class="bi bi-flower1"></i> </p>
       <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
         <%= f.input :body,
             as: :radio_buttons,
