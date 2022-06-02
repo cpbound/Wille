@@ -2,8 +2,14 @@
   <div class="card-container unaware_state">
     <div class="card-contents unaware_state">
       <p><i class="bi bi-file-earmark-medical-fill"></i> <%= Funeral::QUESTIONS[:unaware_state] %> <i class="bi bi-file-earmark-medical-fill"></i> </p>
-      <%= form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-        <%= f.text_field :unaware_state %>
+      <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
+        <%= f.input :unaware_state,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Funeral::CATEGORIES %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.unaware_state.present? %>
           <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
