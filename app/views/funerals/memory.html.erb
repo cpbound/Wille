@@ -3,7 +3,7 @@
     <div class="card-contents">
       <p> <i class="bi bi-memory"></i> <%= Funeral::QUESTIONS[:memory] %> <i class="bi bi-memory"></i> </p>
       <%= simple_form_for(@funeral, :url => wizard_path, :method => :put) do |f| %>
-        <%= f.text_field :memory, placeholder: 'Write description!', class: 'mb-3 p-2' %>
+        <%= f.input :memory, label: false, placeholder: 'Write description!', class: 'mb-3 p-2' %>
         <%= f.input :photo, as: :file, label: false, class: 'mb-3 p-2 w-50' %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.memory.present? %>

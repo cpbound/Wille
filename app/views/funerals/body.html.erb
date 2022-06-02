@@ -11,7 +11,7 @@
             input_html: {class: 'category-selector'},
             collection: Funeral::CATEGORIES2 %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
-        <% if @funeral.unaware_state.present? %>
+        <% if @funeral.body.present? %>
           <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
         <% end %>
       <% end %>
