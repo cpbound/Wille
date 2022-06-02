@@ -6,7 +6,7 @@
         <%= f.text_field :no_invite %>
         <%= f.submit 'Next', :class => 'btn btn-primary' %>
         <% if @funeral.no_invite.present? %>
-          <%= link_to 'Finish', wills_path, class: 'btn btn-primary' %>
+          <%= link_to 'Finish', wills_path, class: 'btn btn-success' %>
         <% end %>
       <% end %>
     </div>
