@@ -1,21 +1,21 @@
 <div class="container" data-controller="make-pdf">
   <h1>Your Will</h1>
-  <div class="card">
+  <div class="card" style="box-shaow: 0px 1px 6px #000; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; margin-right: 0px;">
     <div class="card-body" id="will-card" data-make-pdf-target="printText">
-      <p> "I, <strong><%="#{@will.user.name}, #{@will.user.age}"%></strong> of <strong><%="#{@will.user.address}"%></strong> being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets (about <strong><%="(#{@will.assets_range})"%></strong>) primarily to <strong><%="#{@will.primary_beneficiaries}"%></strong> and subsequently <strong><%="#{@will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@will.donation}"%></strong> receives a small donation."</p>
-      <p> "I have always strived to be the most" <strong><%="#{@will.user.funeral.ten_words}"%></strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead.</p>
+      <p style="font-size: 19px;word-spacing: 2px;"> "I have always strived to be the most" <strong><%="#{@will.user.funeral.ten_words}"%></strong> person I could be. In the event that I have not legally decalred my will as of the time of my passing, let this statement stand as a summation of my personal thoughts and experiences, my heartfelt intentions and my strongest desires. I hope they will offer guidance on the road ahead.</p>
+      <p style="font-size: 19px;word-spacing: 2px;"> "I, <strong><%="#{@will.user.name}, #{@will.user.age}"%></strong> of <strong><%="#{@will.user.address}"%></strong> being of sound mind and body, make the following pronouncements. I hereby leave the majority of my assets (about <strong><%="(#{@will.assets_range})"%></strong>) primarily to <strong><%="#{@will.primary_beneficiaries}"%></strong> and subsequently <strong><%="#{@will.residuary}"%> </strong> to deal with as they see fit. I also wish that <strong><%="#{@will.donation}"%></strong> receives a small donation."</p>
     </div>
   </div>
   <div class="btn-container d-flex justify-content-between mt-3">
-    <button class="btn btn-primary" data-action="click->make-pdf#make_pdf">Make a PDF
+    <button class="btn btn-primary mb-3" data-action="click->make-pdf#make_pdf">Make a PDF
     </button>
   </div>
-  <%= form_tag invite_will_path(@will), method: :post do %>
+  <%= form_tag invite_will_path(@will), class:'d-flex w-50', method: :post do %>
     <%= text_field_tag :email,
     params[:email],
-    class: "form-control",
+    class: "form-control w-75",
     placeholder: "Enter email:"
     %>
-    <%= submit_tag "Invite", class: "btn btn-primary" %>
+    <%= submit_tag "Invite", class: "btn btn-primary w-25" %>
   <% end %>
 </div>
