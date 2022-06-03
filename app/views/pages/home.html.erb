@@ -4,9 +4,8 @@
   <div class="banner-content text-center">
     <h1>Wille[vɪ́lǝ]</h1>
     <p>Start thinking about the big questions</p>
-    <div class="button">
-      <%= link_to "Ready?", funeral_path(:ten_words) %>
-      <i class="fas fa-angle-double-right"></i>
-    </div>
+    <%= link_to funeral_path(:ten_words), class: "btn btn-primary", style: "font-size: 25px" do %>
+      Ready? <i class="fas fa-angle-double-right"></i>
+    <% end %>
   </div>
 </div
