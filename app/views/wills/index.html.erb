@@ -69,7 +69,7 @@
           <%= link_to funeral_path(:no_invite), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-person-x-fill"></i>
-              <span>Uninvite: </span><%= @current_user.funeral.no_invite %>
+              <span>No invitation: </span><%= @current_user.funeral.no_invite %>
               <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:no_invite] + ": "}%20#{@current_user.funeral.no_invite}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
@@ -104,7 +104,7 @@
           <%= link_to funeral_path(:unaware_state), class: 'text-decoration-none' do %>
             <li class="mb-3">
               <i class="bi bi-file-earmark-medical-fill"></i>
-              <span>If not aware?: </span><%= @current_user.funeral.unaware_state %>
+              <span>Unconcious state: </span><%= @current_user.funeral.unaware_state %>
               <%= link_to "Tweet", "https://twitter.com/intent/tweet?text=#{Will::QUESTIONS[:unaware_state] + ": "}%20#{@current_user.funeral.unaware_state}", class: "twitter-share-button", data: {size: "small"}%>
             </li>
           <% end %>
