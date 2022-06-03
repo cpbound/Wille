@@ -18,7 +18,14 @@ Will.destroy_all
 puts "The End"
 User.destroy_all
 
-User.create!(email: "bora@lewagon.com", password: "123456")
+User.create!(
+  email: "bora@lewagon.com",
+  password: "123456",
+  name: "Bora",
+  address: "20, Lewagon Way",
+  age: 25,
+
+)
 
 10.times do
   user = User.create!(
@@ -51,13 +58,6 @@ User.create!(email: "bora@lewagon.com", password: "123456")
     residuary: Faker::Name.name,
     donation: "The injured #{Faker::Creature::Animal.name} Foundation"
   )
-  # Executor.create!(
-  #   user_id: user.id,
-  #   name: Faker::Name.name,
-  #   email: Faker::Internet.email,
-  #   address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
-  #   phone: Faker::PhoneNumber.cell_phone
-  # )
 end
 
 puts "created #{User.count} users, #{Funeral.count} funerals, #{Will.count} wills. Goodnight."
