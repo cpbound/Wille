@@ -1,6 +1,6 @@
 # Wille
 
-Wille is all about encouraging users to consider what happens to themselves after they die through curated articles; creating a post-life will and funeral plan online. Built in 2 weeks at Le Wagon Tokyo bootcamp.
+Wille is all about encouraging users to consider what happens to themselves after they die through curated articles; creating a post-life will and funeral plan online. 
 
 http://www.mywill-online.cyou/
 ## Acknowledgements
