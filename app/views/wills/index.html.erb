@@ -3,7 +3,11 @@
   <p class="text-center fs-5">Is this what you want to leave behind?</p>
   <div class="two_cards">
     <div class="card">
-      <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
+      <% if @current_user.funeral.photo.key.present? %>
+        <%= cl_image_tag @current_user.funeral.photo.key, class:"card-img-top"%>
+      <% else %>
+        <%= image_tag "memory_placehold.jpg", class:"card-img-top" %>
+      <% end %>
       <div class="card-body">
         <h3 class="card-title"><i class="fab fa-gratipay"></i> My Best Memory</h3>
         <%# <p class="card-text">You can update your answers anytime.</p> %>
